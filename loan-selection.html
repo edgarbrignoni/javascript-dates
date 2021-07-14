@@ -1,0 +1,612 @@
+---
+layout: default
+title: Loan Selection Options
+search: exclude
+exclude: true
+---
+{% include debug.html %}
+<div id="loanOptions">
+    {% include loading.html %}
+    <div id="loanSelection">
+        <div class="container">
+            <div id="infoArea">
+                <div class="row">
+                    <div class="col-10 col-md-6 offset-1 offset-md-3">
+                        <h1>Great News!</h1>
+                        <p>You are approved for up to</p>
+                        <h2>$<span id="approvedAmount">0</span></h2>
+                        <p>Let's keep moving! Complete the three easy steps below to set up your loan:</p>
+                    </div>
+                </div>
+            </div><!-- /#infoArea -->
+
+            <div id="loanArea">
+                <div id="stepOneOffer" class="loan-box-grid selected">
+                    <div class="loan-box-picture">
+                        <img id="iconOne" src="{% asset_path loan-offer.svg %}" class="icon center-item" alt="Loan Offer">
+                        <img id="checkmarkOne" src="{% asset_path checkmark.svg %}" class="checkmark center-item hide" alt="Loan Offer">
+                    </div>
+                    <div id="loanBoxStep1" class="loan-box-step">
+                        <span class="center-text">
+                            <h3>Step One</h3>
+                            <h4>Choose Loan Offer</h4>
+                        </span>
+                    </div>
+
+                    <div id="loanOfferDisplay" class="loan-box-info hide">
+                        <ul>
+                            <li><strong>Loan Amount: </strong>$<span id="loanAmountOffer">0</span></li>
+                            <li><strong>Term: </strong><span id="loanPeriodOffer">0</span></li>
+                            <li><strong>Payment: </strong><span id="loanPaymentOffer">0</span></li>
+                            <li><strong>APR: </strong><span id="loanAPROffer">0</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="loan-box-right">
+                        <img src="{% asset_path arrow_forward_ios-white-48dp.svg %}" class="nav-arrow center-item" alt="Loan Offer">
+                    </div>
+                    <div class="loan-box-button">
+                        <a id="select1" class="btn btn-primary btn-slt">Select</a>
+                    </div>
+                </div><!-- /#Step1 -->
+
+                <div id="stepTwoFunding" class="loan-box-grid inactive">
+                    <div class="loan-box-picture">
+                        <img id="iconTwo" src="{% asset_path credit-card.svg %}" class="icon center-item" alt="Credit Card">
+                        <img id="checkmarkTwo" src="{% asset_path checkmark.svg %}" class="checkmark center-item hide" alt="Loan Offer">
+                    </div>
+                    <div id="loanBoxStep2" class="loan-box-step">
+                        <span class="center-text">
+                            <h3>Step Two</h3>
+                            <h4>Choose Funding Options</h4>
+                        </span>
+                    </div>
+                    <div id="displayDebitCardSelect" class="loan-box-info hide">
+                        <p><span id="debitCardVerbage">You have chosen<strong> instant funding by debit card</strong></span></p>
+                    </div>
+                    <div id="displayBankingSelect" class="loan-box-info hide">
+                        <p><span id="bankAccountVerbage">You have chosen to have these funds <strong>deposited directly into your bank checking account.</strong></span></p>
+                    </div>
+                    <div class="loan-box-right">
+                        <img src="{% asset_path arrow_forward_ios-white-48dp.svg %}" class="nav-arrow center-item" alt="Loan Offer">
+                    </div>
+                    <div class="loan-box-button">
+                        <a id="select2" class="btn btn-primary btn-slt">Select</a>
+                    </div>
+                </div><!-- /#Step2 -->
+
+                <div id="stepThreePayment" class="loan-box-grid inactive">
+                    <div class="loan-box-picture">
+                        <img id="iconThree" src="{% asset_path calendar.svg %}" class="icon center-item" alt="Calendar">
+                        <img id="checkmarkThree" src="{% asset_path checkmark.svg %}" class="checkmark center-item hide" alt="Loan Offer">
+                    </div>
+                    <div id="loanBoxStep3" class="loan-box-step">
+                        <span class="center-text">
+                            <h3>Step Three</h3>
+                            <h4>Confirm Payment Schedule</h4>
+                        </span>
+                    </div>
+                    <div id="displayPaymentScheduleInfo" class="loan-box-info hide">
+                        <p>You have confirmed your payment schedule.  If you need to, feel free to adjust it to your liking.</p>
+                    </div>
+                    <div class="loan-box-right">
+                        <img src="{% asset_path arrow_forward_ios-white-48dp.svg %}" class="nav-arrow center-item" alt="Loan Offer">
+                    </div>
+                    <div class="loan-box-button">
+                        <a id="select3" class="btn btn-primary btn-slt">Select</a>
+                    </div>
+                </div><!-- /#Step3 -->
+
+            </div><!-- /#loanArea -->
+
+            <div id="finalizeLoanOptions" class="loan-box-button hide">
+                <a id="finalizeLoanButton" class="btn btn-primary btn-final">Continue</a>
+            </div><!-- /#finalizeLoanOptions -->
+        </div>
+    </div><!-- /#loanSelection -->
+
+    <span id="loanSelectionCover" class="cover hide"></span>
+
+    <div class="center-container">
+
+        <div id="loanSelectionOptions" class="hide">
+
+        {% include loanSelectionClose.html %}
+
+            <h2>Loan Offers</h2>
+            <p>Select your preferred loan offer below.  You can also use the slider to<br> customize your loan amount between the minimum and maximum offer.</p>
+
+            <div id="loanTermOne" class="loan-terms">
+                <div class="loan-items items-amount">
+                    Amount
+                </div>
+                <div class="loan-items items-term">
+                    Term
+                </div>
+                <div class="loan-items items-apr">
+                    APR*
+                </div>
+                <div class="loan-items items-payment">
+                    Payment*
+                </div>
+                <div class="loan-info info-amount">
+                    $<span id="loanAmountOffer1">0</span>
+                </div>
+                <div class="loan-info info-term">
+                    <span id="loanPeriod1">0</span>
+                </div>
+                <div class="loan-info info-apr">
+                    <span id="loanAPR1">0</span>
+                </div>
+                <div class="loan-info info-payment">
+                    <span id="loanPaymentOption1">0</span>
+                </div>
+                <div class="loan-box-button">
+                    <a id="selectOption1" class="btn btn-primary btn-slt">Select</a>
+                </div>
+            </div>
+
+            <div id="loanTermTwo" class="loan-terms hide">
+                <div class="loan-items items-amount mobile">
+                    Amount
+                </div>
+                <div class="loan-items items-term mobile">
+                    Term
+                </div>
+                <div class="loan-items items-apr mobile">
+                    APR*
+                </div>
+                <div class="loan-items items-payment mobile">
+                    Payment*
+                </div>
+                <div class="loan-info info-amount">
+                    $<span id="loanAmountOffer2">0</span>
+                </div>
+                <div class="loan-info info-term">
+                    <span id="loanPeriod2">0</span>
+                </div>
+                <div class="loan-info info-apr">
+                    <span id="loanAPR2">0</span>
+                </div>
+                <div class="loan-info info-payment">
+                        <span id="loanPaymentOption2">0</span>
+                </div>
+                <div class="loan-box-button">
+                    <a id="selectOption2" class="btn btn-primary btn-slt">Select</a>
+                </div>
+            </div>
+
+            <div id="loanTermThree" class="loan-terms hide">
+                <div class="loan-items items-amount mobile">
+                    Amount
+                </div>
+                <div class="loan-items items-term mobile">
+                    Term
+                </div>
+                <div class="loan-items items-apr mobile">
+                    APR*
+                </div>
+                <div class="loan-items items-payment mobile">
+                    Payment*
+                </div>
+                <div class="loan-info info-amount">
+                    $<span id="loanAmountOffer3">0</span>
+                </div>
+                <div class="loan-info info-term">
+                    <span id="loanPeriod3">0</span>
+                </div>
+                <div class="loan-info info-apr">
+                    <span id="loanAPR3"></span>
+                </div>
+                <div class="loan-info info-payment">
+                        <span id="loanPaymentOption3">0</span>
+                </div>
+                <div class="loan-box-button">
+                    <a id="selectOption3" class="btn btn-primary btn-slt">Select</a>
+                </div>
+            </div>
+
+            <div id="loanTermCustom" class="customize-loan">
+                <h2>Customize Your Loan Amount</h2>
+                <div class="slidecontainer">
+                    <span id="custonMinimumAmount" class="select-minimum"></span>
+                    <span id="custonMaxAmount" class="select-maximum"></span>
+                    <input type="range" min="0" max="" step="1" value="0" class="slider" id="myRange">
+                    <div id="sliderAmount" class="selected-amount"></div>
+                </div>
+                <div class="loan-terms">
+                    <div class="loan-items items-amount">
+                        Amount
+                    </div>
+                    <div class="loan-items items-term">
+                        Term
+                    </div>
+                    <div class="loan-items items-apr">
+                        APR*
+                    </div>
+                    <div class="loan-items items-payment">
+                        Payment*
+                    </div>
+                    <div class="loan-info info-amount">
+                        <span id="loanAmountOfferCustom"></span>
+                    </div>
+                    <div class="loan-info info-term">
+                            <span id="loanPeriodCustom">0</span>
+                    </div>
+                    <div class="loan-info info-apr">
+                        <span id="loanAPRCustom"></span>
+                    </div>
+                    <div class="loan-info info-payment">
+                        <span id="loanPaymentOptionCustom"></div>
+                    <div class="loan-box-button">
+                        <a id="selectOptionCustom" class="btn btn-primary btn-slt">Select</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="terms-conditions">
+                <p class="terms">
+                    *EFT Dates are the dates that your automatic payments will run. EFT Dates that are earlier than Contractual Due Dates will pay off your loan faster. EFT Dates that are setup here to be after the corresponding Contractual Due Dates will not result in extra finance charges. Those payments will apply as if they were made on the Contractual Due Dates. EFT dates must be within a certain number of days of the Contractual Due Dates, depending on the installment frequency, and there must be at least 6 days between adjacent EFT Dates.
+                </p>
+            </div>
+
+        </div><!-- /#loanSelectionOptions -->
+
+        <div id="loanFundingMethod" class="hide">
+
+            {% include loanSelectionClose.html %}
+
+            <h1>Select Your Preferred Funding Method</h1>
+
+            <hr class="funding-hr desktop">
+
+            <div id="debitCardArea" class="debit-card-hover">
+                <div class="debit-card">
+                    <div class="row">
+                        <div class="col-3 col-md-2">
+                            <img src="{% asset_path debit-card-icon.svg %}" class="debit-card-icon" alt="Debit Card">
+                        </div>
+                        <div class="col">
+                            <h2>Debit Card</h2>
+                            <h3>Instant Funding - Fastest</h3>
+                            <p class="float-left desktop">
+                                If you have a Visa or Mastercard-branded bank debit card, select this option and provide your card information to see if your card is eligible for instant funding.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="mobile">
+                            If you have a Visa or Mastercard-branded bank debit card, select this option and provide your card information to see if your card is eligible for instant funding.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loan-box-button mobile">
+                <a id="selectDebitCard" class="btn btn-primary btn-slt">Select</a>
+            </div>
+
+            <div id="bankAccountArea" class="bank-account-hover">
+                <div class="bank-account">
+                    <div class="row">
+                        <div class="col-3 col-md-2">
+                            <img src="{% asset_path bank-icon.svg %}" class="bank-icon" alt="Bank Account">
+                        </div>
+                        <div class="col">
+                            <h2>ACH Into Bank Account</h2>
+                            <p class="float-left desktop">
+                                Loans transacted before 2:00 p.m. ET are typically funded the same day. Loans transacted after 2:00 p.m. ET are funded the next bank business day.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="mobile">
+                        Loans transacted before 2:00 p.m. ET are typically funded the same day. Loans transacted after 2:00 p.m. ET are funded the next bank business day.
+                    </p>
+                </div>
+            </div>
+
+            <div id="bankAccountForm" class="bank-account-info mobile">
+                <form id="bankAccountInfo" name="bankAccountInfo">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-12 offset-md-1 col-md-5">
+                            <label for="bankAccountNumber">Account Number*</label>
+                            <input type="text" class="form-control" name="Account Number" id="bankAccountNumber" value="" disabled>
+
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <label for="bankRoutingNumber">Routing Number*</label>
+                            <input type="text" inputmode="numeric" class="form-control" name="Routing Number" id="bankRoutingNumber" value="" disabled>
+                        </div>
+                    </div>
+                    <div class="loan-box-button">
+                        <a id="confirmMethodBank" class=" btn btn-primary btn-method">Confirm</a>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+            <div id="debtCardForm" class="debit-card-info hide">
+
+                <form id="debtCardInfo" name="debtCardInfo">
+                    <fieldset id="debtCardFieldset">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="cardNumber">Card Number*</label>
+                                <input type="text" inputmode="numeric" class="form-control" id="cardNumber" name="Card Number" placeholder="Card Number" pattern="[0-9]{13,16}" maxlength="16" required>
+                                <span class="errorMessage hide">Required. Please enter a valid debit card number.</span>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="firstNameOnCard">First Name on Card*</label>
+                                <input type="text" class="form-control" id="firstNameOnCard" name="First Name on Card" placeholder="First Name on Card" minlength="2" maxlength="36" required>
+                                <span class="errorMessage hide">Required.</span>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="lastNameOnCard">Last Name on Card*</label>
+                                <input type="text" class="form-control" id="lastNameOnCard" name="Last Name on Card" placeholder="Last Name on Card" minlength="2" maxlength="36" required>
+                                <span class="errorMessage hide">Required.</span>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <label for="expirationMonth">Expiration Month*</label>
+                                <select id="expirationMonth" name="Expiration Month" class="form-control" required>
+                                    <option value="" disabled selected>Select Month</option>
+                                    <option value="01">1 - January</option>
+                                    <option value="02">2 - February</option>
+                                    <option value="03">3 - March</option>
+                                    <option value="04">4 - April</option>
+                                    <option value="05">5 - May</option>
+                                    <option value="06">6 - June</option>
+                                    <option value="07">7 - July</option>
+                                    <option value="08">8 - August</option>
+                                    <option value="09">9 - September</option>
+                                    <option value="10">10 - October</option>
+                                    <option value="11">11 - November</option>
+                                    <option value="12">12 - December</option>
+                                </select>
+                                <span class="errorMessage hide">Required</span>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <label for="expirationYear">Expiration Year*</label>
+                                <select id="expirationYear" name="Expiration Year" class="form-control" required>
+                                    <option value="" disabled selected>Select Year</option>
+                                    <option value="21">2021</option>
+                                    <option value="22">2022</option>
+                                    <option value="23">2023</option>
+                                    <option value="24">2024</option>
+                                    <option value="25">2025</option>
+                                    <option value="26">2026</option>
+                                    <option value="27">2027</option>
+                                    <option value="28">2028</option>
+                                    <option value="29">2029</option>
+                                    <option value="30">2030</option>
+                                </select>
+                                <span class="errorMessage hide">Required.</span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label for="securityCode">Security Code*</label>
+                                <input type="text" inputmode="numeric" class="form-control" id="securityCode" pattern="\d{3}" name="Security Code" placeholder="Security Code" minlength="3" maxlength="3" required>
+                                <span class="errorMessage hide">Required.</span>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check form-check-inline float-md-right">
+                                <input type="checkbox" value="true" id="useCurentAddress" name="Curent Address">
+                                <span class="use-current">Use Current Customer Address</span>
+                                </div>
+                                <label for="streetAddressCard">Address*</label><br class="mobile">
+                                <input type="text" class="form-control" id="streetAddressCard" name="Street Address" placeholder="Address" required>
+                                <span class="errorMessage hide">Required. Please enter a valid street address.</span>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="cityCard">City*</label>
+                                <input type="text" class="form-control" id="cityCard" name="City" placeholder="City" required>
+                                <span class="errorMessage hide">Required. Please enter a valid city.</span>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <label for="stateCard">State*</label>
+                                <select id="stateCard" name="State" class="form-control" required>
+                                    <option selected disabled value="">Select State</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                                <span class="errorMessage hide">Required.</span>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <label for="postalCodeCard">Postal Code*</label>
+                        <input type="text" inputmode="numeric" class="form-control zip-code" id="postalCodeCard" pattern="\d{5}" name="Postal Code" minlength="5" maxlength="5" placeholder="ZIP" title="Required. Please enter your ZIP Code" required>
+                                <span class="errorMessage hide">Required.</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                </form>
+                <div id="debitCardCheckGood" class="debit-card-check row hide">
+                    <div class="col-12">
+                        <p><strong>Good news!</strong><br>
+                        The card provided is eligible for instant funding!<br>Select Confirm to use this card.</p>
+                    </div>
+                </div>
+
+                <div id="debitCardCheckError" class="debit-card-check alert-danger row hide">
+                    <div class="col-12">
+                        <p>
+                            Sorry the card provided cannot be used for instant funding.
+                            <br>
+                            Please ensure that the card information is correct and entered accurately.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="loan-box-button">
+                    <a id="checkEligibility" class="btn btn-primary btn-check">Check Eligibility</a>
+                    <a id="confirmDebitCard" class="btn btn-primary btn-confirm hide">Confirm</a>
+                </div>
+                <div id="goBack">
+                    Go Back To Funding Method Selection
+                </div>
+            </div>
+
+        </div><!-- /#loanFundingMethod -->
+
+        <div id="loanPreferredSchedule" class="hide">
+
+            {% include loanSelectionClose.html %}
+
+            <h1>Set Your Preferred Schedule</h1>
+
+            <p>
+                Your EFT Dates have been selected to match the dates that you get paid, based on the information that you provided.  Please review and confirm that these dates work for you.
+            </p>
+
+            <div id="loanScheduleDisplay">
+
+                <div id="payment1" class="grid-wrap">
+                    <div class="payment-number-info">Payment<br>Number</div>
+                    <div class="payment-amount-info">Payment<br>Amount</div>
+                    <div class="contractual-due-date-info">Contractual<br>Due Date</div>
+                    <div class="eft-date-info">
+                        <span class="eft-adjust-date">EFT <br class="desktop">Date*</span>
+                        <span class="eft-adjust-images">
+                            <img src="{% asset_path plus_circle_blue.svg %}" id="desktopAddDayAll" class="hover" alt="Add">
+                            <br>
+                            <img src="{% asset_path minus_circle_blue.svg %}" id="desktopSubtractDayAll" class="hover" alt="Subtract">
+                        </span>
+                        <span class="eft-adjust-text">(Add 1 Day To All Dates)<br>(Subtract 1 From All Dates)</span>
+                    </div>
+                    <div class="adjust-days-info">
+                        <span class="mobile">
+                            <div class="half">
+                                <img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractDayAll" class="hover" alt="Subtract"><br>Subtract 1 Day<br> From All Dates
+                            </div>
+                            <div class="half">
+                                <img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDayAll" class="hover" alt="Add"><br>Add 1 Day <br>To All Dates
+                            </div>
+                        </span>
+                        <span class="desktop">Add or Subtract<br> a Day</span>
+                    </div>
+                    <div class="payment-number">1</div>
+                    <div id="paymentAmount01" class="payment-amount"></div>
+                    <div id="contractualDueDate01" class="contractual-due-date"></div>
+                    <div class="eft-date">
+                        <span id="EFTDay01" class="eft-day-name" ></span>
+                        <input type="text" id="EFTDate01" class="current-eft-date" disabled name="EFT Date01" value="">
+                        <div class="half mobile">
+                            <img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDay01" class="add-one-mobile" alt="Add"> A Day
+                        </div>
+                        <div class="half mobile">
+                            <img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractOneDay01" class="subtract-one-mobile" alt="Add"> A Day
+                        </div>
+                    </div>
+                    <div class="adjust-days">
+                        <img src="{% asset_path minus_circle_blue.svg %}" id="desktopSubtractOneDay01" class="hover subtract-one-day" alt="Subtract">
+                        <img src="{% asset_path plus_circle_blue.svg %}" id="desktopAddOneDay01" class="hover add-one-day" alt="Add"">
+                    </div>
+                </div>
+
+                <div id="displayAll" class="display-payment-options">
+                    Show All Scheduled Payments
+                </div>
+
+                <div id="underfold">
+
+                    <div id="payment2" class="grid-wrap">
+                        <div class="payment-number-info mobile">Payment<br>Number</div>
+                        <div class="payment-amount-info mobile">Payment<br>Amount</div>
+                        <div class="contractual-due-date-info mobile">Contractual<br>Due Date</div>
+                        <div class="eft-date-info mobile">
+                            <span class="eft-adjust-date">EFT <br class="desktop">Date*</span>
+                            <span class="eft-adjust-images">
+                                <img src="{% asset_path plus_circle_blue.svg %}" class="" alt="Add">
+                                <br>
+                                <img src="{% asset_path minus_circle_blue.svg %}" class="" alt="Subtract">
+                            </span>
+                        </div>
+                        <div class="payment-number">2</div>
+                        <div id="paymentAmount02" class="payment-amount"></div>
+                        <div id="contractualDueDate02" class="contractual-due-date"></div>
+                        <div class="eft-date">
+                            <span id="EFTDay02" class="eft-day-name"></span>
+                            <input type="text"  id="EFTDate02" class="current-eft-date" disabled name="EFT Date02" value="">
+                            <div class="half mobile">
+                                <img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDay02" class="add-one-mobile" alt="Add"> A Day
+                            </div>
+                            <div class="half mobile">
+                                <img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractOneDay02" class="subtract-one-mobile" alt="Add"> A Day
+                            </div>
+                        </div>
+                        <div class="adjust-days">
+                            <img src="{% asset_path minus_circle_blue.svg %}" id="desktopSubtractOneDay02" class="hover subtract-one-day" alt="Subtract">
+                            <img src="{% asset_path plus_circle_blue.svg %}" id="desktopAddOneDay02" class="hover add-one-day" alt="Add"">
+                        </div>
+                    </div>
+
+                    <div id="showAll" class="display-payment-options">
+                        Show Fewer Scheduled Payments
+                    </div>
+
+                </div><!-- /#underfold -->
+
+            </div><!-- /#loanScheduleDisplay -->
+
+            <div class="eft-terms">
+                *EFT Dates are the dates that your automatic payments will run. EFT Dates that are earlier than Contractual Due Dates will pay off your loan faster. EFT Dates that are setup here to be after the corresponding Contractual Due Dates will not result in extra finance charges. Those payments will apply as if they were made on the Contractual Due Dates. EFT dates must be within a certain number of days of the Contractual Due Dates, depending on the installment frequency, and there must be at least 6 days between adjacent EFT Dates.
+            </div>
+
+            <div class="loan-box-button">
+                <a id="confermDates" class="btn btn-primary btn-fund">Confirm</a>
+            </div>
+
+        </div><!-- /#loanPreferredSchedule -->
+
+    </div><!-- /.center-container -->
+</div><!-- /#loanOptions -->
