@@ -1,0 +1,19 @@
+.green {background-color: #4CAF50;} /* Green */
+.blue {background-color: #008CBA;} /* Blue */
+.red {background-color: #f44336;} /* Red */
+.gray {background-color: #e7e7e7; color: black !important;} /* Gray */
+.black {background-color: #555555;} /* Black */
+.purple {background-color: #561aab;} /* Purple */
+
+.box {
+    font-family: monospace;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
