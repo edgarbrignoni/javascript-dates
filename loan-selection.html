@@ -87,7 +87,7 @@ exclude: true
                         </span>
                     </div>
                     <div id="displayPaymentScheduleInfo" class="loan-box-info hide">
-                        <p>You have confirmed your payment schedule.  If you need to, feel free to adjust it to your liking.</p>
+                        <p>You have confirmed your payment schedule. If you need to, feel free to adjust it to your liking.</p>
                     </div>
                     <div class="loan-box-right">
                         <img src="{% asset_path arrow_forward_ios-white-48dp.svg %}" class="nav-arrow center-item" alt="Loan Offer">
@@ -111,10 +111,10 @@ exclude: true
 
         <div id="loanSelectionOptions" class="hide">
 
-        {% include loanSelectionClose.html %}
+            {% include loanSelectionClose.html %}
 
             <h2>Loan Offers</h2>
-            <p>Select your preferred loan offer below.  You can also use the slider to<br> customize your loan amount between the minimum and maximum offer.</p>
+            <p>Select your preferred loan offer below. You can also use the slider to<br> customize your loan amount between the minimum and maximum offer.</p>
 
             <div id="loanTermOne" class="loan-terms">
                 <div class="loan-items items-amount">
@@ -169,7 +169,7 @@ exclude: true
                     <span id="loanAPR2">0</span>
                 </div>
                 <div class="loan-info info-payment">
-                        <span id="loanPaymentOption2">0</span>
+                    <span id="loanPaymentOption2">0</span>
                 </div>
                 <div class="loan-box-button">
                     <a id="selectOption2" class="btn btn-primary btn-slt">Select</a>
@@ -199,7 +199,7 @@ exclude: true
                     <span id="loanAPR3"></span>
                 </div>
                 <div class="loan-info info-payment">
-                        <span id="loanPaymentOption3">0</span>
+                    <span id="loanPaymentOption3">0</span>
                 </div>
                 <div class="loan-box-button">
                     <a id="selectOption3" class="btn btn-primary btn-slt">Select</a>
@@ -231,7 +231,7 @@ exclude: true
                         <span id="loanAmountOfferCustom"></span>
                     </div>
                     <div class="loan-info info-term">
-                            <span id="loanPeriodCustom">0</span>
+                        <span id="loanPeriodCustom">0</span>
                     </div>
                     <div class="loan-info info-apr">
                         <span id="loanAPRCustom"></span>
@@ -307,22 +307,22 @@ exclude: true
 
             <div id="bankAccountForm" class="bank-account-info mobile">
                 <form id="bankAccountInfo" name="bankAccountInfo">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-12 offset-md-1 col-md-5">
-                            <label for="bankAccountNumber">Account Number*</label>
-                            <input type="text" class="form-control" name="Account Number" id="bankAccountNumber" value="" disabled>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-12 offset-md-1 col-md-5">
+                                <label for="bankAccountNumber">Account Number*</label>
+                                <input type="text" class="form-control" name="Account Number" id="bankAccountNumber" value="" disabled>
 
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="bankRoutingNumber">Routing Number*</label>
+                                <input type="text" inputmode="numeric" class="form-control" name="Routing Number" id="bankRoutingNumber" value="" disabled>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-5">
-                            <label for="bankRoutingNumber">Routing Number*</label>
-                            <input type="text" inputmode="numeric" class="form-control" name="Routing Number" id="bankRoutingNumber" value="" disabled>
+                        <div class="loan-box-button">
+                            <a id="confirmMethodBank" class=" btn btn-primary btn-method">Confirm</a>
                         </div>
                     </div>
-                    <div class="loan-box-button">
-                        <a id="confirmMethodBank" class=" btn btn-primary btn-method">Confirm</a>
-                    </div>
-                </div>
                 </form>
             </div>
 
@@ -331,149 +331,149 @@ exclude: true
                 <form id="debtCardInfo" name="debtCardInfo">
                     <fieldset id="debtCardFieldset">
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-12">
-                                <label for="cardNumber">Card Number*</label>
-                                <input type="text" inputmode="numeric" class="form-control" id="cardNumber" name="Card Number" placeholder="Card Number" pattern="[0-9]{13,16}" maxlength="16" required>
-                                <span class="errorMessage hide">Required. Please enter a valid debit card number.</span>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label for="firstNameOnCard">First Name on Card*</label>
-                                <input type="text" class="form-control" id="firstNameOnCard" name="First Name on Card" placeholder="First Name on Card" minlength="2" maxlength="36" required>
-                                <span class="errorMessage hide">Required.</span>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label for="lastNameOnCard">Last Name on Card*</label>
-                                <input type="text" class="form-control" id="lastNameOnCard" name="Last Name on Card" placeholder="Last Name on Card" minlength="2" maxlength="36" required>
-                                <span class="errorMessage hide">Required.</span>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <label for="expirationMonth">Expiration Month*</label>
-                                <select id="expirationMonth" name="Expiration Month" class="form-control" required>
-                                    <option value="" disabled selected>Select Month</option>
-                                    <option value="01">1 - January</option>
-                                    <option value="02">2 - February</option>
-                                    <option value="03">3 - March</option>
-                                    <option value="04">4 - April</option>
-                                    <option value="05">5 - May</option>
-                                    <option value="06">6 - June</option>
-                                    <option value="07">7 - July</option>
-                                    <option value="08">8 - August</option>
-                                    <option value="09">9 - September</option>
-                                    <option value="10">10 - October</option>
-                                    <option value="11">11 - November</option>
-                                    <option value="12">12 - December</option>
-                                </select>
-                                <span class="errorMessage hide">Required</span>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <label for="expirationYear">Expiration Year*</label>
-                                <select id="expirationYear" name="Expiration Year" class="form-control" required>
-                                    <option value="" disabled selected>Select Year</option>
-                                    <option value="21">2021</option>
-                                    <option value="22">2022</option>
-                                    <option value="23">2023</option>
-                                    <option value="24">2024</option>
-                                    <option value="25">2025</option>
-                                    <option value="26">2026</option>
-                                    <option value="27">2027</option>
-                                    <option value="28">2028</option>
-                                    <option value="29">2029</option>
-                                    <option value="30">2030</option>
-                                </select>
-                                <span class="errorMessage hide">Required.</span>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <label for="securityCode">Security Code*</label>
-                                <input type="text" inputmode="numeric" class="form-control" id="securityCode" pattern="\d{3}" name="Security Code" placeholder="Security Code" minlength="3" maxlength="3" required>
-                                <span class="errorMessage hide">Required.</span>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check form-check-inline float-md-right">
-                                <input type="checkbox" value="true" id="useCurentAddress" name="Curent Address">
-                                <span class="use-current">Use Current Customer Address</span>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="cardNumber">Card Number*</label>
+                                    <input type="text" inputmode="numeric" class="form-control" id="cardNumber" name="Card Number" placeholder="Card Number" pattern="[0-9]{13,16}" maxlength="16" required>
+                                    <span class="errorMessage hide">Required. Please enter a valid debit card number.</span>
                                 </div>
-                                <label for="streetAddressCard">Address*</label><br class="mobile">
-                                <input type="text" class="form-control" id="streetAddressCard" name="Street Address" placeholder="Address" required>
-                                <span class="errorMessage hide">Required. Please enter a valid street address.</span>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label for="cityCard">City*</label>
-                                <input type="text" class="form-control" id="cityCard" name="City" placeholder="City" required>
-                                <span class="errorMessage hide">Required. Please enter a valid city.</span>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <label for="stateCard">State*</label>
-                                <select id="stateCard" name="State" class="form-control" required>
-                                    <option selected disabled value="">Select State</option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="AK">Alaska</option>
-                                    <option value="AZ">Arizona</option>
-                                    <option value="AR">Arkansas</option>
-                                    <option value="CA">California</option>
-                                    <option value="CO">Colorado</option>
-                                    <option value="CT">Connecticut</option>
-                                    <option value="DE">Delaware</option>
-                                    <option value="DC">District of Columbia</option>
-                                    <option value="FL">Florida</option>
-                                    <option value="GA">Georgia</option>
-                                    <option value="HI">Hawaii</option>
-                                    <option value="ID">Idaho</option>
-                                    <option value="IL">Illinois</option>
-                                    <option value="IN">Indiana</option>
-                                    <option value="IA">Iowa</option>
-                                    <option value="KS">Kansas</option>
-                                    <option value="KY">Kentucky</option>
-                                    <option value="LA">Louisiana</option>
-                                    <option value="ME">Maine</option>
-                                    <option value="MD">Maryland</option>
-                                    <option value="MA">Massachusetts</option>
-                                    <option value="MI">Michigan</option>
-                                    <option value="MN">Minnesota</option>
-                                    <option value="MS">Mississippi</option>
-                                    <option value="MO">Missouri</option>
-                                    <option value="MT">Montana</option>
-                                    <option value="NE">Nebraska</option>
-                                    <option value="NV">Nevada</option>
-                                    <option value="NH">New Hampshire</option>
-                                    <option value="NJ">New Jersey</option>
-                                    <option value="NM">New Mexico</option>
-                                    <option value="NY">New York</option>
-                                    <option value="NC">North Carolina</option>
-                                    <option value="ND">North Dakota</option>
-                                    <option value="OH">Ohio</option>
-                                    <option value="OK">Oklahoma</option>
-                                    <option value="OR">Oregon</option>
-                                    <option value="PA">Pennsylvania</option>
-                                    <option value="RI">Rhode Island</option>
-                                    <option value="SC">South Carolina</option>
-                                    <option value="SD">South Dakota</option>
-                                    <option value="TN">Tennessee</option>
-                                    <option value="TX">Texas</option>
-                                    <option value="UT">Utah</option>
-                                    <option value="VT">Vermont</option>
-                                    <option value="VA">Virginia</option>
-                                    <option value="WA">Washington</option>
-                                    <option value="WV">West Virginia</option>
-                                    <option value="WI">Wisconsin</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <span class="errorMessage hide">Required.</span>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <label for="postalCodeCard">Postal Code*</label>
-                        <input type="text" inputmode="numeric" class="form-control zip-code" id="postalCodeCard" pattern="\d{5}" name="Postal Code" minlength="5" maxlength="5" placeholder="ZIP" title="Required. Please enter your ZIP Code" required>
-                                <span class="errorMessage hide">Required.</span>
+                                <div class="col-12 col-md-6">
+                                    <label for="firstNameOnCard">First Name on Card*</label>
+                                    <input type="text" class="form-control" id="firstNameOnCard" name="First Name on Card" placeholder="First Name on Card" minlength="2" maxlength="36" required>
+                                    <span class="errorMessage hide">Required.</span>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="lastNameOnCard">Last Name on Card*</label>
+                                    <input type="text" class="form-control" id="lastNameOnCard" name="Last Name on Card" placeholder="Last Name on Card" minlength="2" maxlength="36" required>
+                                    <span class="errorMessage hide">Required.</span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <label for="expirationMonth">Expiration Month*</label>
+                                    <select id="expirationMonth" name="Expiration Month" class="form-control" required>
+                                        <option value="" disabled selected>Select Month</option>
+                                        <option value="01">1 - January</option>
+                                        <option value="02">2 - February</option>
+                                        <option value="03">3 - March</option>
+                                        <option value="04">4 - April</option>
+                                        <option value="05">5 - May</option>
+                                        <option value="06">6 - June</option>
+                                        <option value="07">7 - July</option>
+                                        <option value="08">8 - August</option>
+                                        <option value="09">9 - September</option>
+                                        <option value="10">10 - October</option>
+                                        <option value="11">11 - November</option>
+                                        <option value="12">12 - December</option>
+                                    </select>
+                                    <span class="errorMessage hide">Required</span>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <label for="expirationYear">Expiration Year*</label>
+                                    <select id="expirationYear" name="Expiration Year" class="form-control" required>
+                                        <option value="" disabled selected>Select Year</option>
+                                        <option value="21">2021</option>
+                                        <option value="22">2022</option>
+                                        <option value="23">2023</option>
+                                        <option value="24">2024</option>
+                                        <option value="25">2025</option>
+                                        <option value="26">2026</option>
+                                        <option value="27">2027</option>
+                                        <option value="28">2028</option>
+                                        <option value="29">2029</option>
+                                        <option value="30">2030</option>
+                                    </select>
+                                    <span class="errorMessage hide">Required.</span>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <label for="securityCode">Security Code*</label>
+                                    <input type="text" inputmode="numeric" class="form-control" id="securityCode" pattern="\d{3}" name="Security Code" placeholder="Security Code" minlength="3" maxlength="3" required>
+                                    <span class="errorMessage hide">Required.</span>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline float-md-right">
+                                        <input type="checkbox" value="true" id="useCurentAddress" name="Curent Address">
+                                        <span class="use-current">Use Current Customer Address</span>
+                                    </div>
+                                    <label for="streetAddressCard">Address*</label><br class="mobile">
+                                    <input type="text" class="form-control" id="streetAddressCard" name="Street Address" placeholder="Address" required>
+                                    <span class="errorMessage hide">Required. Please enter a valid street address.</span>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="cityCard">City*</label>
+                                    <input type="text" class="form-control" id="cityCard" name="City" placeholder="City" required>
+                                    <span class="errorMessage hide">Required. Please enter a valid city.</span>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <label for="stateCard">State*</label>
+                                    <select id="stateCard" name="State" class="form-control" required>
+                                        <option selected disabled value="">Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    <span class="errorMessage hide">Required.</span>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <label for="postalCodeCard">Postal Code*</label>
+                                    <input type="text" inputmode="numeric" class="form-control zip-code" id="postalCodeCard" pattern="\d{5}" name="Postal Code" minlength="5" maxlength="5" placeholder="ZIP" title="Required. Please enter your ZIP Code" required>
+                                    <span class="errorMessage hide">Required.</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </fieldset>
+                    </fieldset>
                 </form>
                 <div id="debitCardCheckGood" class="debit-card-check row hide">
                     <div class="col-12">
                         <p><strong>Good news!</strong><br>
-                        The card provided is eligible for instant funding!<br>Select Confirm to use this card.</p>
+                            The card provided is eligible for instant funding!<br>Select Confirm to use this card.</p>
                     </div>
                 </div>
 
@@ -505,7 +505,7 @@ exclude: true
             <h1>Set Your Preferred Schedule</h1>
 
             <p>
-                Your EFT Dates have been selected to match the dates that you get paid, based on the information that you provided.  Please review and confirm that these dates work for you.
+                Your EFT Dates have been selected to match the dates that you get paid, based on the information that you provided. Please review and confirm that these dates work for you.
             </p>
 
             <div id="loanScheduleDisplay">
@@ -538,7 +538,7 @@ exclude: true
                     <div id="paymentAmount01" class="payment-amount"></div>
                     <div id="contractualDueDate01" class="contractual-due-date"></div>
                     <div class="eft-date">
-                        <span id="EFTDay01" class="eft-day-name" ></span>
+                        <span id="EFTDay01" class="eft-day-name"></span>
                         <input type="text" id="EFTDate01" class="current-eft-date" disabled name="EFT Date01" value="">
                         <div class="half mobile">
                             <img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDay01" class="add-one-mobile" alt="Add"> A Day
@@ -553,7 +553,7 @@ exclude: true
                     </div>
                 </div>
 
-                <div id="displayAll" class="display-payment-options">
+                <div id=" displayAll" class="display-payment-options">
                     Show All Scheduled Payments
                 </div>
 
@@ -576,7 +576,7 @@ exclude: true
                         <div id="contractualDueDate02" class="contractual-due-date"></div>
                         <div class="eft-date">
                             <span id="EFTDay02" class="eft-day-name"></span>
-                            <input type="text"  id="EFTDate02" class="current-eft-date" disabled name="EFT Date02" value="">
+                            <input type="text" id="EFTDate02" class="current-eft-date" disabled name="EFT Date02" value="">
                             <div class="half mobile">
                                 <img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDay02" class="add-one-mobile" alt="Add"> A Day
                             </div>
@@ -590,7 +590,7 @@ exclude: true
                         </div>
                     </div>
 
-                    <div id="showAll" class="display-payment-options">
+                    <div id=" showAll" class="display-payment-options">
                         Show Fewer Scheduled Payments
                     </div>
 
