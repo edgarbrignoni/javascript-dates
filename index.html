@@ -11,34 +11,6 @@
         <h1>Set Your Preferred Schedule</h1>
         <p>Your EFT Dates have been selected to match the dates that you get paid, based on the information that you provided. Please review and confirm that these dates work for you.</p>
         <div id="loanScheduleDisplay">
-            <!-- <div id="underfold">
-                <div id="payment2" class="grid-wrap">
-                    <div class="payment-number-info mobile">Payment<br />Number</div>
-                    <div class="payment-amount-info mobile">Payment<br />Amount</div>
-                    <div class="contractual-due-date-info mobile">Contractual<br />Due Date</div>
-                    <div class="eft-date-info mobile">
-                        <span class="eft-adjust-date">EFT <br class="desktop" />Date*</span>
-                        <span class="eft-adjust-images"
-                            ><img src="{% asset_path plus_circle_blue.svg %}" class="" alt="Add" /><br />
-                            <img src="{% asset_path minus_circle_blue.svg %}" class="" alt="Subtract"
-                        /></span>
-                    </div>
-                    <div class="payment-number">2</div>
-                    <div id="paymentAmount02" class="payment-amount"></div>
-                    <div id="contractualDueDate02" class="contractual-due-date"></div>
-                    <div class="eft-date">
-                        <span id="EFTDay02" class="eft-day-name"></span> <input type="text" id="EFTDate02" class="current-eft-date" disabled name="EFT Date02" value="" />
-                        <div class="half mobile"><img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDay02" class="add-one-mobile" alt="Add" /> A Day</div>
-                        <div class="half mobile"><img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractOneDay02" class="subtract-one-mobile" alt="Add" /> A Day</div>
-                    </div>
-                    <div class="adjust-days">
-                        <img src="{% asset_path minus_circle_blue.svg %}" id="desktopSubtractOneDay02" class="hover subtract-one-day" alt="Subtract" />
-                        <img src="{% asset_path plus_circle_blue.svg %}" id="desktopAddOneDay02" class="hover add-one-day" alt="Add"">
-                    </div>
-                </div>
-                <div id="showAll" class="display-payment-options">Show Fewer Scheduled Payments</div>
-            </div> -->
-            <!-- /#underfold -->
         </div>
         <div class="eft-terms">*EFT Dates are the dates that your automatic payments will run. EFT Dates that are earlier than Contractual Due Dates will pay off your loan faster. EFT Dates that are setup here to be after the corresponding Contractual Due Dates will not result in extra finance charges. Those payments will apply as if they were made on the Contractual Due Dates. EFT dates must be within a certain number of days of the Contractual Due Dates, depending on the installment frequency, and there must be at least 6 days between adjacent EFT Dates.</div>
         <div class="loan-box-button">
@@ -47,24 +19,6 @@
     </div>
     <!-- /#loanPreferredSchedule -->
 
-    <!-- <div id="eft-schedule" class='row'>
-        <div class="row">
-            <div class="col blue box">
-                Payment Number
-            </div>
-            <div class="col blue box">
-                Payment Amount
-            </div>
-            <div class="col blue box">
-                Contractual Due Dates
-            </div>
-            <div class="col blue box">
-                EFT Dates
-            </div>
-            <button class="col gray box" type="submit" name="loanDecision" onclick="location.reload()">RELOAD</button>
-            <button class="col purple box" type="submit" name="loanDecision" onclick="loanDecision()">Go Lycos! Get it!</button>
-        </div>
-    </div> -->
     <script src="global-functions.js"></script>
     <script src="row-installment.js"></script>
     <script src="eft-schedule.js"></script>
