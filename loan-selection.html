@@ -456,32 +456,49 @@ exclude: true
                     <div class="contractual-due-date-info">Contractual<br />Due Date</div>
                     <div class="eft-date-info">
                         <span class="eft-adjust-date">EFT <br class="desktop" />Date*</span>
-                        <span class="eft-adjust-images"
-                            ><img src="{% asset_path plus_circle_blue.svg %}" id="desktopAddDayAll" class="hover" alt="Add" /><br />
-                            <img src="{% asset_path minus_circle_blue.svg %}" id="desktopSubtractDayAll" class="hover" alt="Subtract"
-                        /></span>
+                        <span class="eft-adjust-images">
+                            <img src="{% asset_path plus_circle_blue.svg %}" id="desktopAddDayAll" class="hover" alt="Add" /><br />
+                            <img src="{% asset_path minus_circle_blue.svg %}" id="desktopSubtractDayAll" class="hover" alt="Subtract"/>
+                        </span>
                         <span class="eft-adjust-text">(Add 1 Day To All Dates)<br />(Subtract 1 From All Dates)</span>
                     </div>
                     <div class="adjust-days-info">
                         <span class="mobile">
                             <div class="half">
-                                <img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractDayAll" class="hover" alt="Subtract" /><br />Subtract 1 Day<br />
+                                <img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractDayAll" class="hover" alt="Subtract" />
+                                <br />
+                                Subtract 1 Day
+                                <br />
                                 From All Dates
                             </div>
-                            <div class="half"><img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDayAll" class="hover" alt="Add" /><br />Add 1 Day <br />To All Dates</div>
+                            <div class="half">
+                                <img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDayAll" class="hover" alt="Add" />
+                                <br />
+                                Add 1 Day
+                                <br />
+                                To All Dates
+                            </div>
                         </span>
-                        <span class="desktop"
-                            >Add or Subtract<br />
-                            a Day</span
-                        >
+                        <span class="desktop">
+                            Add or Subtract
+                            <br />
+                            a Day
+                        </span>
                     </div>
                     <div class="payment-number">1</div>
                     <div id="paymentAmount01" class="payment-amount"></div>
                     <div id="contractualDueDate01" class="contractual-due-date"></div>
                     <div class="eft-date">
-                        <span id="EFTDay01" class="eft-day-name"></span> <input type="text" id="EFTDate01" class="current-eft-date" disabled name="EFT Date01" value="" />
-                        <div class="half mobile"><img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDay01" class="add-one-mobile" alt="Add" /> A Day</div>
-                        <div class="half mobile"><img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractOneDay01" class="subtract-one-mobile" alt="Add" /> A Day</div>
+                        <span id="EFTDay01" class="eft-day-name"></span>
+                        <input type="text" id="EFTDate01" class="current-eft-date" disabled name="EFT Date01" value="" />
+                        <div class="half mobile">
+                            <img src="{% asset_path plus_circle_blue.svg %}" id="mobileAddOneDay01" class="add-one-mobile" alt="Add" />
+                            A Day
+                        </div>
+                        <div class="half mobile">
+                            <img src="{% asset_path minus_circle_blue.svg %}" id="mobileSubtractOneDay01" class="subtract-one-mobile" alt="Add" />
+                            A Day
+                        </div>
                     </div>
                     <div class="adjust-days">
                         <img src="{% asset_path minus_circle_blue.svg %}" id="desktopSubtractOneDay01" class="hover subtract-one-day" alt="Subtract" />
