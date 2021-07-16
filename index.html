@@ -7,32 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div id="eft-schedule" class='row'>
-            <div class="row">
-                <button class="col gray box" type="submit" name="reload" onclick="location.reload()">RELOAD</button>
-                <button class="col purple box" type="submit" name="loanDecision" onclick="loanDecision()">Go Lycos! Get it!</button>
+    <div id="eft-schedule" class='row'>
+        <div class="row">
+            <button class="col gray box" type="submit" name="reload" onclick="location.reload()">RELOAD</button>
+            <button class="col purple box" type="submit" name="loanDecision" onclick="loanDecision()">Go Lycos! Get it!</button>
+        </div>
+        <div class="row">
+            <div class="col blue box">
+                Payment Number
             </div>
-            <div class="row">
-                <div class="col blue box">
-                    Payment Number
-                </div>
-                <div class="col blue box">
-                    Payment Amount
-                </div>
-                <div class="col blue box">
-                    Contractual Due Dates
-                </div>
-                <div class="col blue box">
-                    EFT Dates
-                </div>
-                <button class="col green box" type="submit" name="columnInstallAdd" onclick="columnInstallment('add')">
-                    column+
-                </button>
-                <button class="col red box" type="submit" name="columnInstallSub" onclick="columnInstallment('sub')">
-                    column-
-                </button>
+            <div class="col blue box">
+                Payment Amount
             </div>
+            <div class="col blue box">
+                Contractual Due Dates
+            </div>
+            <div class="col blue box">
+                EFT Dates
+            </div>
+            <button class="col green box" type="submit" name="columnInstallAdd" onclick="columnInstallment('add')">
+                column+
+            </button>
+            <button class="col red box" type="submit" name="columnInstallSub" onclick="columnInstallment('sub')">
+                column-
+            </button>
         </div>
     </div>
     <script src="global-functions.js"></script>
