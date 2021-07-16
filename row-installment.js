@@ -5,7 +5,7 @@ const rowInstallment = (btnPress, index) => {
     noSubOverlap = (stringToDate(scheduleDates[index-1]) != undefined) ? (stringToDate(scheduleDates[index]).getTime() - 1000 * 3600 * 24 > stringToDate(scheduleDates[index-1])) : false;
     diffInDays = dateDiff(scheduleDates[index], contractDates[index]);
     scheduleDates[index] = new Date(dashToSlashDateString(scheduleDates[index]));
-    limit = frequency == 'Monthly' ? 15 : 6;
+    let limit = frequency == 'Monthly' ? 15 : 6;
     if (diffInDays < limit && btnPress == 'add') {
         if (index < Object.keys(scheduleDates).length - 1 && noAddOverlap) {
             scheduleDates[index].setDate(scheduleDates[index].getDate() + 1);
