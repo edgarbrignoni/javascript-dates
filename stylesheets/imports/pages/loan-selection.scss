@@ -1,0 +1,937 @@
+/*** Loan Selection Page ***/
+#loanOptions {
+
+#loanSelection {
+  margin-top: 2rem;
+  h1 {
+    color: $light-blue;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  #infoArea {
+    text-align: center;
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+      line-height: 2rem;
+    }
+    h2 {
+      color: $main-black;
+      font-weight: 600;
+      font-size: 3rem;
+      margin: 0;
+      margin-bottom: 0.5em;
+      line-height: 1;
+    }
+  }
+
+  #loanArea {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    h3 {
+      font-size: 1.75rem;
+      color: $light-blue;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+    h4 {
+      font-size: 1.2rem;
+      color: $light-blue;
+      font-weight: 600;
+    }
+    @media (min-width: 767px) {
+      h4 {
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+      }
+      margin-left: 10%;
+      margin-right: 10%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+.loan-box-grid {
+  display: grid;
+  border: solid;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border-width: 0.25rem;
+  border-color: #214290;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-areas:
+    "lbp lbp lbs lbs lbs lbs lbs lbs lbs lbr"
+    "lbi lbi lbi lbi lbi lbi lbi lbi lbi lbr"
+      ;
+    @media (min-width: 767px) {
+      text-align: center;
+      width: 16rem;
+      height: 18rem;
+      margin-left: 1rem;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+        "lbs"
+        "lbp"
+        "lbi"
+        "lbb"
+        ;
+    }
+}
+
+.loan-box-picture {
+  grid-area: lbp;
+  position: relative;
+  min-height: 6rem;
+  margin-left: 0.5rem;
+  @media (min-width: 767px) {
+    margin: 0;
+  }
+}
+
+.loan-box-step {
+  grid-area: lbs;
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @media (min-width: 767px) {
+    position: inherit;
+    margin-top: 1rem;
+  }
+}
+
+.loan-box-right {
+  background: #214290;
+  grid-area: lbr;
+  position: relative;
+  @media (min-width: 767px) {
+    display: none;
+  }
+
+}
+
+.loan-box-button {
+  grid-area: lbb;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.loan-box-info {
+  grid-area: lbi;
+  background-color: #FBFBFB;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  @media (min-width: 767px) {
+    background-color: inherit;
+    ul {
+      text-align: left;
+    }
+    p {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+
+  .icon {
+    height: 3rem;
+    width: 3rem;
+      @media (min-width: 767px) {
+        height: 7rem;
+        width: 7rem;
+      }
+  }
+
+  .checkmark {
+    height: 3rem;
+    width: 3rem;
+      @media (min-width: 767px) {
+        height: 5rem;
+        width: 5rem;
+      }
+  }
+
+  .nav-arrow {
+    height: 2rem;
+    width: 2rem;
+    margin-left: 0.25rem;
+  }
+
+//HELPERS
+  .center-item {
+    //NOTE: position: relative; must be in parent container
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .center-text {
+    //NOTE: position: relative; must be in parent container
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    @media (min-width: 767px) {
+      position: inherit;
+    }
+  }
+
+  .active {
+    border-color: #4DB3DE;
+    border-width: 0.128rem;
+      h4 {
+        color: #000;
+      }
+
+    @media (min-width: 767px) {
+      height: auto;
+    }
+
+    .loan-box-right {
+      background: #4DB3DE;
+    }
+  }
+
+  .inactive {
+    filter: grayscale(50%) opacity(25%);
+    @media (min-width: 767px) {
+      transform: scale(0.8);
+      margin-top: 2rem;
+    }
+      .nav-arrow {
+        filter: invert(100%);
+      }
+    }
+  }
+
+  .selected {
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+
+  .continue-area {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/*** Loan Selection Options ***/
+
+//All Items
+#loanSelectionOptions, #loanFundingMethod, #loanFundingMethodCard, #loanFundingMethodACH, #loanPreferredSchedule, {
+  z-index: 999;
+  position: absolute;
+  top: 10%;
+  background: #fff;
+  width: 90%;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000080;
+  padding: 1.5rem 0;
+
+  p {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .terms , .eft-terms {
+    margin-top: 1rem;
+    color: #214291;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+ .eft-terms {
+   line-height: 1.25;
+   font-weight: bold;
+   margin-left: 1rem;
+   margin-right: 1rem;
+ }
+
+  .debit-card, .bank-account {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .debit-card-icon, .bank-icon {
+    background-color: #DFE4F0;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    float: right;
+    margin-right: -1rem;
+  }
+}
+
+#loanSelectionOptions {
+  @media (min-width: 767px) {
+    top: 15%;
+    width: 60rem;
+  }
+  input[type='range'] {
+      -webkit-appearance: none;
+      width: 100%;
+      background-color: #D9D9D9;
+      height: 1rem;
+      border-radius: 0.75rem;
+  }
+  .loan-terms {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "itemsamount infoamount infoamount infoamount"
+      "itemsterm infoterm infoterm infoterm"
+      "itemsapr infoapr infoapr infoapr"
+      "itemspayment infopayment infopayment infopayment"
+      "loanbutton loanbutton loanbutton loanbutton"
+      ;
+    @media (min-width: 767px) {
+      margin-top: 0;
+      margin-bottom: 0;
+      grid-template-columns: 1fr 2fr 1fr 2fr 2fr;
+      grid-template-areas:
+        "itemsamount itemsterm itemsapr itemspayment itemspayment"
+        "infoamount infoterm infoapr infopayment loanbutton"
+        ;
+      }
+    }
+
+  .loan-items {
+    border-top: solid #D0D0D0 1px;
+    border-bottom: solid #D0D0D0 1px;
+    background-color: #E5E5E5;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-weight: bold;
+    @media (min-width: 767px) {
+      border-top: none;
+      border-bottom: none;
+      font-weight: normal;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 2rem
+    }
+  }
+  .loan-info {
+    border-top: solid #D0D0D0 1px;
+    border-bottom: solid #D0D0D0 1px;
+    padding-left: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    @media (min-width: 767px) {
+      border-top: none;
+      border-bottom: none;
+      font-weight: lighter;
+      padding-left: 2rem
+    }
+  }
+
+  .items-amount{
+    grid-area: itemsamount;
+  }
+  .items-term{
+    grid-area: itemsterm;
+  }
+  .items-apr{
+    grid-area: itemsapr;
+  }
+  .items-payment{
+    grid-area: itemspayment;
+  }
+  .info-amount{
+    grid-area: infoamount;
+  }
+  .info-term{
+    grid-area: infoterm;
+  }
+  .info-apr{
+    grid-area: infoapr;
+  }
+  .info-payment{
+    grid-area: infopayment;
+  }
+  .loan-box-button {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    grid-area: loanbutton;
+  }
+
+  .customize-loan {
+    margin-top: 1rem;
+  }
+  .slidecontainer {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  .select-minimum {
+    float: left;
+    color: $main-blue;
+  }
+  .select-maximum {
+    float: right;
+    color: $main-blue;
+  }
+  .selected-amount {
+    color: $light-blue;
+    font-size: 1.75rem;
+  }
+  #sliderAmount {
+    text-align: center;
+  }
+}
+
+#loanFundingMethod, #loanFundingMethodACH {
+  p {
+    padding-top: 0.25rem;
+    text-align: left;
+  }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  h2 {
+    float: left;
+    text-align: left;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+  h3 {
+    float: left;
+    text-align: left;
+    padding-right: 2rem;
+    text-transform: uppercase;
+    color: #4DB3DE;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  label {
+    color: #214290;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  @media (min-width: 767px) {
+    top: 20%;
+    width: 40rem;
+    p {
+      padding-left: 0;
+      padding-right: 2rem;
+    }
+    h1 {
+
+    }
+    h2 {
+
+    }
+    h3 {
+      float: right;
+      padding-right: 2rem;
+    }
+    hr {
+      width: 85%;
+      margin-left: 10%;
+    }
+  }
+
+  .form-group {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .bank-account-hover, .debit-card-hover, .bank-account-selected, .debit-card-hover-disabled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  .debit-card-hover-disabled {
+    filter: grayscale(75%) opacity(50%);
+  }
+
+  .debit-card-hover-disabled:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .bank-account-selected {
+    background-color: #E4F4FA;
+  }
+
+  .bank-account-hover:hover, .debit-card-hover:hover, .debit-card-hover-disabled:hover {
+    background-color: #4DB3DE;
+    color: #fff;
+    h3 {
+      color: #fff !important;
+    }
+    .debit-card-icon, .bank-icon {
+      background-color: #71C2E5;
+      img {
+        filter: invert(100%);
+      }
+    }
+  }
+
+.currently-selected {
+  @media (min-width: 767px) {
+    background-color: #E4F4FA;
+  }
+  @media (max-width: 767px) {
+    img {
+      background-color: #C8DBEC;
+    }
+  }
+
+}
+
+
+  .desktop-hide {
+    @media (min-width: 767px) {
+      display: none;
+    }
+  }
+
+  .card-selected {
+    padding-top: 1em;
+    padding-left: 0px;
+    p {
+      font-size: 1.1rem;
+    }
+    @media (min-width: 767px) {
+      background-color: #E4F4FA;
+    }
+    .debit-card-icon {
+      background-color: #71C2E5;
+    }
+  }
+  .debit-card-info {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    label {
+      color: #214290;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    input[type="checkbox"] {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .use-current {
+      margin-left: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+#debitCardCheckError {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  p {
+    text-align: center;
+  }
+}
+
+#debitCardCheckGood {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  p {
+    text-align: center;
+  }
+}
+
+  .debit-card-check {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+  }
+
+  #goBack {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #A21414;
+    font-weight: normal;
+    text-decoration: underline;
+    cursor: pointer;
+    }
+}
+
+#loanFundingMethodCard {
+  p {
+    padding-top: 0.25rem;
+    text-align: left;
+  }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  h2 {
+    float: left;
+    text-align: left;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+  h3 {
+    float: left;
+    text-align: left;
+    padding-right: 2rem;
+    text-transform: uppercase;
+    color: #4DB3DE;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  @media (min-width: 767px) {
+    top: 20%;
+    width: 40rem;
+    p {
+      padding-left: 0;
+      padding-right: 2rem;
+    }
+    h3 {
+      float: right;
+      padding-right: 2rem;
+    }
+  }
+  .card-selected {
+    padding-top: 1em;
+    padding-left: 0px;
+    p {
+      font-size: 1.1rem;
+    }
+    @media (min-width: 767px) {
+      background-color: #E4F4FA;
+    }
+    .debit-card-icon {
+      background-color: #71C2E5;
+    }
+  }
+  .debit-card-info {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    label {
+      color: #214290;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    input[type="checkbox"] {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .use-current {
+      margin-left: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .go-back {
+    margin-top: 1rem;
+    text-align: center;
+    a {
+      color: #A21414;
+      font-weight: normal;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    a:visted {
+      color: #A21414;
+    }
+  }
+}
+
+
+#loanPreferredSchedule {
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  p {
+    font-weight: normal;
+  }
+  input {
+    width: 6rem;
+    float: right;
+    text-align: center;
+    margin-left: 0.5rem;
+    margin-right: 1.5rem;
+    border: 1px solid $grey;
+    color: #000;
+  }
+
+  @media (min-width: 767px) {
+    width: 50rem;
+  }
+
+#loanScheduleDisplay {
+  @media (min-width: 767px) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+.grid-wrap {
+  margin-top: 1rem;
+  @media (max-width: 767px) {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "paymentnumberinfo paymentnumber"
+    "paymentamountinfo paymentamount"
+    "contractualduedateinfo contractualduedate"
+    "eftdateinfo eftdate"
+    "adjustdaysinfo adjustdaysinfo"
+  ;
+  }
+  @media (min-width: 767px) {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      "paymentnumberinfo paymentamountinfo contractualduedateinfo eftdateinfo adjustdaysinfo"
+      "paymentnumber paymentamount contractualduedate eftdate adjustdays"
+    ;
+  }
+}
+
+.payment-number-info, .payment-amount-info, .contractual-due-date-info, .eft-date-info, .adjust-days-info {
+  margin-bottom: 1rem;
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    background-color: #e5e5e5;
+    padding: .25rem 1rem;
+    font-weight: 700;
+  }
+}
+
+.payment-number-info {
+  grid-area: paymentnumberinfo;
+}
+.payment-amount-info {
+  grid-area: paymentamountinfo;
+}
+.contractual-due-date-info {
+  grid-area: contractualduedateinfo;
+}
+.eft-date-info {
+  grid-area: eftdateinfo;
+  @media (max-width: 767px) {
+    display: flex;
+    align-items: center;
+  }
+
+
+}
+.adjust-days-info {
+  grid-area: adjustdaysinfo;
+  @media (max-width: 767px) {
+    background-color: inherit;
+    padding-top: 0.5rem;
+    img {
+      height: 2rem;
+    }
+  }
+}
+
+.payment-number, .payment-amount, .contractual-due-date, .eft-date, .adjust-days {
+  @media (max-width: 767px) {
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    padding-left: .75rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.payment-number {
+  grid-area: paymentnumber;
+}
+.payment-amount {
+  grid-area: paymentamount;
+}
+.contractual-due-date {
+  grid-area: contractualduedate;
+}
+.eft-date {
+  grid-area: eftdate;
+  @media (max-width: 767px) {
+    display: block;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+.adjust-days {
+  grid-area: adjustdays;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.eft-adjust-date, .eft-adjust-images, .eft-adjust-text {
+  float: left;
+  img {
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+  .eft-adjust-text {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .eft-terms {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+.half {
+  width: 50%;
+  text-align: center;
+  float: left;
+  margin-top: 0.5rem;
+}
+
+  } //#loanScheduleDisplay
+
+.display-payment-options {
+  @media (min-width: 767px) {
+    display: none;
+  }
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  color: $main-green;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+  #underfold {
+    display: none;
+    @media (min-width: 767px) {
+      display: inherit;
+    }
+  }
+} //#loanPreferredSchedule
+
+//Buttons
+.loan-box-button {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+
+  .disabled {
+    cursor: wait;
+    pointer-events: auto;
+    filter: grayscale(75%) opacity(50%);
+  }
+}
+
+ .btn-slt {
+   background-color: #214291;
+   padding-left: 2rem;
+   padding-right: 2rem;
+ }
+
+ .btn-edit {
+   background-color: #5EC3EC;
+   padding-left: 2rem;
+   padding-right: 2rem;
+ }
+
+ .btn-fund {
+   background-color: #5EC3EC;
+   padding-left: 3rem;
+   padding-right: 3rem;
+   margin-top: 0.25rem;
+   margin-bottom: 0.25rem;
+ }
+
+ .btn-method {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+ }
+
+ .btn-check {
+   padding-left: 2rem;
+   padding-right: 2rem;
+ }
+
+ .btn-confirm {
+   background-color: #214291;
+   padding-left: 2rem;
+   padding-right: 2rem;
+ }
+
+ .btn-method-desktop {
+    font-weight: bolder;
+ }
+
+ .btn-cont {
+    background-color: #214290;
+    padding-left: 3rem;
+    padding-right: 3rem;
+ }
+
+.btn-final {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}
+//#loanOptions

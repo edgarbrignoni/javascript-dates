@@ -1,0 +1,93 @@
+/*** Count Us Page ***/
+#ccpaPage,
+#contactPage {
+  margin-top: 5em;
+  @media (max-width: 767px) {
+      margin-top: 1em;
+  }
+  .blue {
+    color: $main-blue;
+  }
+  .btn.btn-lg {
+    position: absolute;
+    padding-top: 0 !important;
+  }
+  h4 {
+    margin: 0 2em .5em 2em;
+  }
+  .alert-success {
+    color: $main-blue !important;
+    background-color: white !important;
+    border: 3px solid $main-blue !important;
+    .btn.btn-lg {
+      color: $main-blue !important;
+    }
+  }
+  .alert-danger {
+    color: $error-msg !important;
+    background-color: white !important;
+    border: 3px solid $error-msg !important;
+    .btn.btn-lg {
+      color: $error-msg !important;
+    }
+  }
+
+  #chatClicker {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: #007bff;
+    &:hover {
+      color: #0056b3;
+    }
+  }
+  #chatIcon {
+    background: transparent;
+    border: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    &:hover {
+      -webkit-filter: brightness(0.6)contrast(2)saturate(.6);
+      filter: brightness(0.6)contrast(2)saturate(.6);
+    }
+  }
+  #telIcon {
+    img:hover {
+      -webkit-filter: brightness(0.6)contrast(2)saturate(.6);
+      filter: brightness(0.6)contrast(2)saturate(.6);
+    }
+  }
+  .contact-options {
+    img {
+      float: left;
+      padding-right: 1em;
+    }
+    margin-top: 1em;
+  }
+  .form {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  label {
+    color: $main-blue;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    font-size: 1em;
+    margin-top: 1em;
+  }
+  .submit-area {
+    margin-top: 2em;
+    text-align: center;
+  }
+  #captchaRow.invalid {
+    background-image: none !important;
+    padding-left: 3px;
+    padding-top: 3px;
+    #captcha-message {
+      text-align: center;
+      padding:10px;
+      color: red;
+    }
+  }
+}

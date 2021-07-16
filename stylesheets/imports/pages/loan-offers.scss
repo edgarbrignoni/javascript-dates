@@ -1,0 +1,505 @@
+#loanOffers {
+
+    #selectLoan {
+        .headingBox {
+            position: relative;
+            padding: 10px;
+            text-align: center;
+            color: black;
+            font-size: 28px;
+            font-weight: 400;
+            margin-top: 10px;
+
+            h1 {
+                color: #3db54a;
+                text-align: center;
+                margin-top: 0;
+                font-weight: 900;
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 3em;
+                font-weight: 400;
+            }
+            #chmktp {
+                position: absolute;
+                width: 150px;
+                top: 44px;
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        .titlesub {
+            text-align: center;
+            margin-top: 15px !important;
+            max-width: 700px;
+            margin: 0 auto;
+
+            h2 {
+                color: black;
+                font-size: 1.875em;
+            }
+
+            p {
+                color: black;
+                font-size: 1.5em;
+            }
+        }
+
+
+        .offerResultsHeader,
+        .difResultsHeader {
+            background-color: $grey-red;
+            .dark {
+                padding: 10px !important;
+            }
+        }
+
+        #resultsList {
+            .offer {
+                border-left: 2px solid $grey-red;
+                border-right: 2px solid $grey-red;
+                border-bottom: 2px solid $grey-red;
+                .light {
+                    padding: 10px !important;
+                    display: flex;
+                    flex-direction: column;
+                    align-content: center;
+                    justify-content: center;
+                }
+                .dark {
+                    background-color: $grey-red;
+                }
+                .btnPrimary {
+                    padding: 10px 30px !important;
+                }
+            }
+        }
+        button.btnPrimary {
+            background-color: #3db54a;
+            border: none;
+            padding: 10px 30px !important;
+            color: #fff;
+            border-radius: 5px;
+            outline: 0;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 10px;
+        }
+
+        @media screen  and (max-width: 991px){
+            #OfferResultsE,
+            .difResultsHeader {
+                display: none;
+            }
+            #resultsList {
+                .offer {
+                    margin-bottom: 2em;
+                    border: none;
+                    .light {
+                        border-top: 2px solid $grey-red;
+                        border-left: 2px solid $grey-red;
+                        border-right: 2px solid $grey-red;
+                    }
+                    .light:nth-of-type(8) {
+                        border-bottom: 2px solid $grey-red;
+
+                    }
+                    .light.empty {
+                        border: none;
+                    }
+                    .dark {
+                        padding: 10px !important;
+                    }
+                }
+            }
+        }
+
+        #difLoanAmount {
+            h2 {
+                color: black;
+                text-align: center;
+                margin-top: 70px;
+            }
+            p {
+                text-align: center;
+                font-size: 1.5em;
+            }
+            & + p {
+                color: $main-blue;
+                font-weight: bolder;
+            }
+
+            .slidecontainer {
+                position: relative;
+                margin-bottom: 50px;
+
+                $track-color: $grey-c7 !default;
+                $thumb-color: $pale-blue !default;
+
+                $thumb-radius: 50% !default;
+                $thumb-height: 24px !default;
+                $thumb-width: 24px !default;
+                $thumb-shadow-size: 4px !default;
+                $thumb-shadow-blur: 4px !default;
+                $thumb-shadow-color: rgba(0, 0, 0, .2) !default;
+                $thumb-border-width: 2px !default;
+                $thumb-border-color: $grey-red !default;
+
+                $track-width: 100% !default;
+                $track-height: 8px !default;
+                $track-shadow-size: 1px !default;
+                $track-shadow-blur: 1px !default;
+                $track-shadow-color: transparent !default;
+                $track-border-width: 2px !default;
+                $track-border-color: white !default;
+
+                $track-radius: 5px !default;
+                $contrast: 5% !default;
+
+                @mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+                    box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
+                }
+
+                @mixin track {
+                    cursor: pointer;
+                    height: $track-height;
+                    transition: all .2s ease;
+                    width: $track-width;
+                }
+
+                @mixin thumb {
+                    @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+                    background: $thumb-color;
+                    border: $thumb-border-width solid $thumb-border-color;
+                    border-radius: $thumb-radius;
+                    cursor: pointer;
+                    height: $thumb-height;
+                    width: $thumb-width;
+                }
+
+                [type='range'] {
+                    margin: 15px 0;
+                    -webkit-appearance: none;
+                    margin: $thumb-height / 2 0;
+                    width: 100%;
+
+                    &:focus {
+                        outline: 0;
+
+                        &::-webkit-slider-runnable-track {
+                            background: lighten($track-color, $contrast);
+                        }
+
+                        &::-ms-fill-lower {
+                            background: $track-color;
+                        }
+
+                        &::-ms-fill-upper {
+                            background: lighten($track-color, $contrast);
+                        }
+                    }
+
+                    &::-webkit-slider-runnable-track {
+                        @include track;
+                        @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+                        background: $track-color;
+                        border: $track-border-width solid $track-border-color;
+                        border-radius: $track-radius;
+                    }
+
+                    &::-webkit-slider-thumb {
+                        @include thumb;
+                        -webkit-appearance: none;
+                        margin-top: ((-$track-border-width * 2 + $track-height) / 2) - ($thumb-height / 2);
+                    }
+
+                    &::-moz-range-track {
+                        @include track;
+                        @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+                        background: $track-color;
+                        border: $track-border-width solid $track-border-color;
+                        border-radius: $track-radius;
+                    }
+
+                    &::-moz-range-thumb {
+                        @include thumb;
+                    }
+
+                    &::-ms-track {
+                        @include track;
+                        background: transparent;
+                        border-color: transparent;
+                        border-width: ($thumb-height / 2) 0;
+                        color: transparent;
+                    }
+
+                    &::-ms-fill-lower {
+                        @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+                        background: darken($track-color, $contrast);
+                        border: $track-border-width solid $track-border-color;
+                        border-radius: $track-radius * 2;
+                    }
+
+                    &::-ms-fill-upper {
+                        @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+                        background: $track-color;
+                        border: $track-border-width solid $track-border-color;
+                        border-radius: $track-radius * 2;
+                    }
+
+                    &::-ms-thumb {
+                        @include thumb;
+                        margin-top: 0;
+                    }
+                }
+
+
+
+                .amtBox {
+                    margin: 5px;
+                    position: relative;
+
+                    div#minAmount {
+                        display: inline-block;
+                        position: absolute;
+                        text-align: left;
+                        left: 0;
+                        z-index: 100;
+                        width: 50%;
+                        color: $main-blue;
+                    }
+
+                    div#maxAmount {
+                        display: inline-block;
+                        position: absolute;
+                        text-align: right;
+                        right: 0;
+                        z-index: 100;
+                        width: 50%;
+                        color: $main-blue;
+                    }
+                }
+            }
+            .difResults {
+                border: 2px solid $grey-red;
+                margin-bottom: 2em;
+                .light {
+                    padding: 10px !important;
+                    display: flex;
+                    align-items: center;
+                }
+                .dark {
+                    padding: 10px !important;
+                    background-color: $grey-red;
+                }
+
+                .btnPrimary {
+                    padding: 10px 30px !important;
+                }
+            }
+            @media screen and (max-width: 991px) {
+                .difResults {
+                    border: none;
+                    .light {
+                        border-top: 2px solid $grey-red;
+                        border-right: 2px solid $grey-red;
+                        border-bottom: none;
+                    }
+                    .light:nth-of-type(8) {
+                        border-bottom: 2px solid $grey-red;
+                    }
+                    .light:nth-of-type(9) {
+                        border-left: none;
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+
+    #loanTerms,
+    #loanConfirmation {
+
+            .heading {
+                margin-bottom: 2em;
+                text-align: center;
+                h1 {
+                    color: $main-green;
+                    text-align: center;
+                    font-weight: 700;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-weight: 700;
+                    font-size: 1.25em;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .details {
+                li {
+                    margin-bottom: 0.5em;
+                }
+                #loanTerms {
+                    border: 1px solid $grey-red;
+
+                    .dark {
+                        background-color: $grey-red;
+                    }
+                    .dark,
+                    .light {
+                        padding: 10px;
+                    }
+                    #approvedandCheck {
+                        color: $main-green;
+                        #justCheck {
+                            display: inline-block;
+                            padding: 0;
+                            width: 25px;
+                            height: 25px;
+                            font-size: 1em;
+                            color: #fff !important;
+                            text-align: center;
+                            background-color: $main-green;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                #questionMark {
+                    display: inline-block;
+                    padding: 0;
+                    width: 100px;
+                    height: 100px;
+                    line-height: 100px;
+                    font-size: 5em;
+                    font-weight: bolder;
+                    color: #fff !important;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    background-color: $light-blue;
+                    border-radius: 50px;
+                    position: relative;
+                    top: -3px;
+                    margin: auto 0;
+                    cursor: pointer;
+                }
+                #signing-message {
+                    color: $light-blue;
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 0.5em;
+                    font-size: 3em;
+                }
+
+                #myModalCustCoaching {
+                    z-index: 99999999999;
+                    position: fixed;
+                    padding: 0;
+                    margin: 0;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, .5);
+                    overflow: scroll;
+
+                    .modal-dialog {
+                        max-width: 1040px;
+                        width: 100%;
+
+                        .modal-header {
+                            border-bottom: none;
+                        }
+
+                        .mdl-main-title {
+                            color: red;
+                            font-size: 2.5em;
+                            text-align: center;
+                            margin-bottom: 32px;
+                        }
+
+                        .mdl-title {
+                            color: black;
+                            font-size: 1.2em;
+                            font-weight: bold;
+                        }
+
+                        .mdl-number {
+                            color: red;
+                            font-size: 54px;
+                        }
+
+                        ul {
+                            color: black;
+                        }
+
+                        .row {
+                            display: -webkit-box;
+                            display: -webkit-flex;
+                            display: -ms-flexbox;
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+
+                        .row>[class*='col-'] {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                }
+
+                #new-window-instructions {
+                    border: 1px solid $grey;
+                    background-color: $grey-red;
+                    border-radius: 15px;
+                    margin: 1em;
+                    padding: 15px;
+                }
+
+                #iframe-container {
+                    margin-top: 2em;
+
+                    iframe {
+                        border: 5px green solid;
+                    }
+
+                }
+                .detail-instructions {
+                    padding: 15px;
+                    border: 1px solid grey;
+                    margin-top: 1em;
+                    margin-bottom: 2em;
+                    background-color: $grey-red;
+                }
+            }
+
+    }
+    #m-decision {
+        margin-bottom: 2em;
+        .heading {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            h1 {
+              color: $light-blue;
+              text-align: center;
+              font-weight: 700;
+            }
+            h2 {
+              text-align: center;
+              font-weight: 700;
+              font-size: 1.25em;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            margin-top: 90px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}

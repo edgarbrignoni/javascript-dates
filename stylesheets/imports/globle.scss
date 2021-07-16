@@ -1,0 +1,38 @@
+/***  globle.scss ***/
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  background-color: $main-blue;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+// .interior {
+//   @media screen and (max-width:767px) {
+//     margin-top: 8em;
+//   }
+//   @media screen and (min-width:768px) {
+//     margin-top: 2em;
+//   }
+// }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    #doc-frame {
+      height: 500px;
+    }
+}

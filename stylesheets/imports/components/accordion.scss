@@ -1,0 +1,142 @@
+/***  accordion.css ***/
+/** https://codepen.io/raubaca/pen/PZzpVe **/
+
+/* Accordion styles */
+
+#accordion {
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+.tabs {
+  overflow: hidden;
+
+}
+.tab {
+  width: 100%;
+  color: $font-white;
+  margin-bottom: 1em;
+  overflow: hidden;
+  &-label {
+    display: flex;
+    padding: 1em;
+    margin-bottom: 0;
+    background: $accordion-main;
+    font-weight: bold;
+    cursor: pointer;
+
+@media (max-width: 767px) {
+    padding: 0.25em;
+  }
+
+    /* Icon */
+    &:hover {
+      background: $accordion-select;
+    }
+    &::before {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      margin-right: 2.5em;
+      margin-left: 0.5em;
+      text-align: center;
+      transition: all .35s;
+      @media (max-width: 767px) {
+          margin-right: 1em;
+        }
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    background: white;
+    transition: all .35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $accordion-select;
+    cursor: pointer;
+    &:hover {
+      background: darken($accordion-select, 10%);
+    }
+  }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    background: $accordion-select;
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 400vh;
+    padding: 1em;
+    color: $main-black;
+  }
+}
+}
+
+/* Footer Accordion */
+#footer-accordion {
+  padding-bottom: 2em;
+  padding-top: 1em;
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+.tabs {
+  overflow: hidden;
+
+}
+.tab {
+  width: 100%;
+  margin-bottom: 1em;
+  overflow: hidden;
+  &-label {
+    display: flex;
+    margin-bottom: 0;
+    font-weight: bold;
+    cursor: pointer;
+    &::before {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      margin-right: 0.5em;
+      text-align: center;
+      transition: all .35s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0;
+    transition: all .35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75em;
+  }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 400vh;
+    padding-top: 1em;
+  }
+}
+}

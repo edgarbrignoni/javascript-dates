@@ -1,0 +1,39 @@
+/*** Loan Types ***/
+#installmentLoans {
+  .state-list {
+    a {
+      color: $main-black;
+    }
+
+  }
+}
+
+#registrationLoans {
+
+}
+
+
+#lineOfCredit {
+
+}
+
+.loan-types {
+  margin-top: 5em;
+  @media (max-width: 767px) {
+    //margin-top: 6.8em;
+    h1 {
+    font-size: 1.75em;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.need-to-get {
+  margin-top: 3em;
+  @media (max-width: 767px) {
+    margin-top: 1em;
+  }
+
+}

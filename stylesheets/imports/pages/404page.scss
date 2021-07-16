@@ -1,0 +1,55 @@
+/*** 404 Page ***/
+#error404page {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+
+  h1 {
+    font-size: 3em;
+    font-weight: 600;
+    color: $main-black;
+  }
+  h3 {
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+    width: 23rem;
+    a {
+      color: $main-black;
+    }
+  }
+  h3:hover {
+    text-decoration: none;
+  }
+  p {
+    font-size: 1.1em;
+    color: #242424;
+    font-weight: 300;
+  }
+  hr {
+    margin: 2em 0;
+  }
+  a {
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  ul {
+    padding-left: 6em;
+  }
+  li {
+    list-style: disc;
+    color: $main-green;
+    font-size: 1.25em;
+    a {
+      color: $main-green;
+    }
+  }
+  .error-image {
+    float: left;
+    max-width: 5em;
+    margin: 0.5em;
+    margin-bottom: 5em;
+  }
+}

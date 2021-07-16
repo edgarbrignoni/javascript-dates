@@ -1,0 +1,47 @@
+/*** About Page ***/
+
+#aboutPage {
+  margin-top: 5em;
+  @media (max-width: 767px) {
+    //margin-top: 6.8em;
+  }
+  h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.25em;
+    font-weight: 700;
+    background-color: $main-blue;
+    color: $font-white;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .about-us {
+
+  }
+
+  .why-choose {
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  .decision-steps {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 0.75em;
+  }
+
+  .apply {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+}

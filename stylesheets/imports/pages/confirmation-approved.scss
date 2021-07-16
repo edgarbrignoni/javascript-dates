@@ -1,0 +1,81 @@
+/*** Confirmation Pages ***/
+//Approve Page
+
+#approved {
+    #d-decision {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    max-width: 850px;
+    .heading {
+        margin-bottom: 2em;
+        h1 {
+            color: $light-blue;
+            text-align: center;
+            font-weight: 700;
+        }
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25em;
+        }
+        // D-decision
+        .amount-block {
+            font-size: 3em;
+            font-weight: 600;
+        }
+    }
+    .details {
+        li {
+            margin-bottom: 0.5em;
+        }
+        // D-Decision elements
+        #plaid-element {
+            border: 1px solid $light-blue;
+            border-radius: 10px;
+            background-color: $grey-light;
+            padding: 15px;
+            .plaid-connect {
+                margin-bottom: 1.5em;
+                #connect-text {
+                    font-weight: bold;
+                    color: $main-blue;
+                    font-size: 120%;
+                }
+            }
+        }
+        // Decision Logic elements
+        #decision-logic-container {
+            #decision-logic-element {
+                #dl-heading {
+                    border: 1px solid $main-blue;
+                    border-radius: 10px 10px 0 0;
+                    background-color: $main-blue;
+                    color: white;
+                    font-weight: bold;
+                    padding: 15px;
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+                #dl-content {
+                    padding: 15px;
+                    background-color: $grey-light;
+                    border: 1px solid $main-blue;
+                    border-radius: 0 0 10px 10px;
+                    .row {
+                        margin-bottom: 1em;
+                        p {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+        #sha {
+            img {
+                margin-bottom: 1em;
+            }
+        }
+    }
+}

@@ -1,0 +1,337 @@
+// Refi-paidout Form Pages
+#refiPage {
+  #app-message {
+    margin-top: 2em;
+
+    h1 {
+      color: $light-blue;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 4em !important;
+      font-weight: 600;
+    }
+  }
+
+  .form-sub-head {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .req-fields {
+    color: $main-green;
+    font-size: 75%;
+  }
+
+  label {
+    color: $main-blue;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    font-size: 1em;
+    margin-top: 1em;
+
+    @media (max-width: 767px) {
+      font-size: 0.9em;
+    }
+  }
+
+  #applyDisclosureStatement {
+    height: 15em;
+    overflow-y: scroll;
+    font-size: 0.75em;
+    border-style: solid;
+    border-color: $grey;
+    border-width: 1px;
+    padding: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+
+  .rounded-check_wrapper {
+    margin-left: 16px;
+
+    .rounded-check {
+      width: 2.25em;
+      height: 2.25em;
+      position: relative;
+      margin: 20px auto;
+      background: #f3f3f3;
+      border: 1px solid #cccccc;
+      border-radius: 4em;
+
+      //float: right;
+      // margin-right: 1em;
+      &:hover {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem #007bff40;
+      }
+
+      &:focus-within {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 1.5px 1px #80bdff;
+      }
+
+      label {
+        width: 2em;
+        height: 2em;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        cursor: default;
+        border-radius: 50px;
+
+        &:after {
+          content: '';
+          width: 1.5em;
+          height: 0.75em;
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+          border: 0.25em solid $main-green;
+          border-top: none;
+          border-right: none;
+          background: transparent;
+          opacity: 0;
+          transform: rotate(-45deg);
+
+          @media (max-width: 767px) {
+            // width: 1em;
+            // height: 0.55em;
+            // bottom: 1px;
+            // left: 4px;
+          }
+        }
+      }
+
+      input[type=checkbox] {
+        // visibility: hidden;
+        //opacity: 0; //Fix for screen reader
+        width: 2.1em;
+        height: 2.1em;
+        border-radius: 50%;
+        vertical-align: middle;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+
+        &:checked+label:after {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 767px) {}
+    }
+  }
+
+  .refi-submit-button-area {
+    text-align: center;
+    transform: translateY(185%);
+  }
+
+  .nextButtonsDiv {
+    width: 100%;
+    height: 100px;
+    background-color: $grey-red;
+  }
+
+  .btn-primary {
+    min-width: 200px;
+  }
+
+  .modal-window {
+    width: auto !important;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+
+    &:target {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &>div {
+      // width: 50%;
+      max-height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 1em;
+      background: #fff;
+      overflow: visible;
+    }
+
+    .modal-content {
+      max-width: 100%;
+      height: 96%;
+
+      header {
+        font-weight: bold;
+      }
+
+      .slider-btn {
+        display: flex;
+        align-self: center;
+
+        button {
+          background: none;
+          border: none;
+          color: #333;
+          font-size: 3em;
+          font-weight: 700;
+        }
+      }
+
+      .modal-img {
+        max-height: 100%;
+        max-width: 100%;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+        margin: auto;
+      }
+    }
+  }
+
+  .modal-close {
+    color: #333;
+    font-size: 200%;
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+  #captchaRow.invalid {
+    background-image: none !important;
+    padding-left: 3px;
+    padding-top: 3px;
+    #captcha-message {
+      text-align: center;
+      padding:10px;
+      color: red;
+    }
+  }
+}
+
+// Refi-paidout Confirmation Pages
+#refiConfirm {
+  font-family: $main-font;
+  display: block;
+  margin-bottom: 40px;
+
+  .resultMsg {
+    margin-bottom: 2em;
+
+    #heroMsg {
+      padding-top: 1em;
+      text-align: left;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: $light-blue;
+      line-height: 1.2em;
+      position: relative;
+      top: 5px;
+      left: 0;
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+
+  .gray-box-d {
+    background-color: $grey-red;
+    border: 1px solid $main-blue;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 40px;
+    min-height: 100px;
+
+    .circle {
+      width: 45px;
+      height: 45px;
+      background: $main-green;
+      -moz-border-radius: 70px;
+      -webkit-border-radius: 70px;
+      border-radius: 70px;
+      padding: 0;
+
+      .nxtNum {
+        color: white;
+        font-weight: 900;
+        text-align: center;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .circle {
+        width: 45px;
+        height: 45px;
+
+        .nxtNum {
+          font-size: 2em;
+        }
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .circle {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 2em;
+
+        .nxtNum {
+          font-size: 4em;
+        }
+      }
+    }
+
+    .grey-box-text {
+      font-family: $main-font;
+      color: $main-blue;
+      text-align: left;
+
+      a {
+        color: $main-blue;
+      }
+    }
+
+
+    .agents-review {
+      color: black;
+      text-align: center;
+      font-size: .65em;
+      padding-top: 10px;
+    }
+
+    .specRow {
+      .specCol {
+        .specP {
+          font-family: $main-font;
+          color: black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+#trustpilot {
+  margin: 1.75rem 1rem;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $light-black;
+    font-weight: 700;
+  }
+
+  h3 {
+    color: #214290;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-lg {
+    padding-left:  2rem;
+    padding-right: 2rem;
+  }
+
+.green-checkmark-box  {
+  width: 4rem;
+  display: block;
+  margin: auto;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.trustpilot-stars {
+  display: block;
+  margin: auto;
+}
+
+.powered-by-trustpilot {
+  margin: 0.5rem 0;
+  max-width: 12rem;
+  display: inline;
+  @media (max-width: 767px) {
+    max-width: 16rem;
+  }
+}
+
+  .trustpilot-grid {
+    @media (max-width: 767px) {
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+          "tph"
+          "tpl"
+          "tpr"
+          ;
+    }
+    width: 40rem;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas:
+      "tph tph tph tph tph tph tph tph tph tph"
+      "tpl tpl tpl tpl tpr tpr tpr tpr tpr tpr"
+      ;
+  }
+
+  .trustpilot-header {
+    grid-area: tph;
+    align-self: center;
+    background-color: #e4e9e7;
+    border-top: 1px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+  }
+
+  .trustpilot-left {
+    grid-area: tpl;
+    border-right: solid 2px;
+    border-right-color: #e7e7e7;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    @media (max-width: 767px) {
+      border-right: none;
+      border-bottom: solid 2px;
+      border-bottom-color: #cccccc;
+      border-bottom-style: groove;
+      margin: 0 1.5rem;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .trustpilot-right {
+    grid-area: tpr;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1em;
+    font-weight: 300;
+    text-align: center;
+
+    h3, p {
+      text-align: left;
+    }
+
+    @media (max-width: 767px) {
+      margin: 0.5rem 0.75rem;
+      p:last-of-type {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      }
+      h3, p {
+        text-align: center;
+      }
+    }
+  }
+
+  .trustpilot-box {
+    background-color: #fff;
+    border: solid 2px;
+    border-color: #cccccc;
+    border-radius: 1rem;
+    @media (min-width: 767px) {
+      border: 0;
+    }
+  }
+}
+
+.trustpilot-hr {
+  width: 40%;
+  border-top: 2px solid #f0f0f0;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.btn-review {
+  background-color: #214291;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

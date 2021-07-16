@@ -1,0 +1,186 @@
+/*** Confirmation Page ***/
+#confirmationPage {
+  margin-top: 5vh;
+  min-height: 75vh;
+
+ul {
+  padding-inline-start: 1em;
+  padding-left: 1em;
+}
+
+  //Approve
+  #approved {
+      #d-decision {
+          margin-left: 0;
+          margin-right: 0;
+      }
+
+      .heading {
+          margin-bottom: 2em;
+          h1 {
+              color: $light-blue;
+              text-align: center;
+              font-weight: 700;
+          }
+          h2 {
+              text-align: center;
+              font-weight: 700;
+              font-size: 1.25em;
+          }
+          // D-decision
+          .amount-block {
+              font-size: 3em;
+              font-weight: 600;
+          }
+      }
+      .details {
+          li {
+              margin-bottom: 0.5em;
+          }
+          // D-Decision elements
+          #plaid-element {
+              border: 1px solid $light-blue;
+              border-radius: 10px;
+              background-color: $grey-light;
+              padding: 15px;
+              .plaid-connect {
+                  margin-bottom: 1.5em;
+                  #connect-text {
+                      font-weight: bold;
+                      color: $main-blue;
+                      font-size: 120%;
+                  }
+              }
+          }
+          // Decision Logic elements
+          #decision-logic-container {
+              #decision-logic-element {
+                  #dl-heading {
+                      border: 1px solid $main-blue;
+                      border-radius: 10px 10px 0 0;
+                      background-color: $main-blue;
+                      color: white;
+                      font-weight: bold;
+                      padding: 15px;
+                      p {
+                          margin-bottom: 0;
+                      }
+                  }
+                  #dl-content {
+                      padding: 15px;
+                      background-color: $grey-light;
+                      border: 1px solid $main-blue;
+                      border-radius: 0 0 10px 10px;
+                      .row {
+                          margin-bottom: 1em;
+                          p {
+                              margin-bottom: 0;
+                          }
+                      }
+                  }
+              }
+          }
+          #sha {
+              img {
+                  margin-bottom: 1em;
+              }
+          }
+      }
+  }
+
+  //Decline
+      #decline {
+
+          h1 {
+              color: $light-blue;
+              text-align: center;
+              font-weight: 700;
+          }
+
+          h2 {
+              text-align: center;
+              font-weight: 700;
+              font-size: 1.25em;
+          }
+
+          h3 {
+              text-align: center;
+              font-weight: 700;
+              font-size: 1.1em;
+              color: $main-green;
+          }
+
+          ul>div>li,
+          ul>li {
+              list-style: none;
+          }
+
+          .section-head {
+              background-color: #f1f1f1;
+              margin-top: 2em;
+              margin-bottom: 1em;
+              padding: 1em;
+
+          }
+
+          .ckbox-line {
+              display: inline-block;
+              min-width: 25px;
+          }
+          .ckbox {
+              border: 2px solid red;
+              background: #fff;
+              color: red;
+              padding: 0 .25em;
+          }
+          .decline-reason-txt {
+              text-decoration: underline;
+          }
+
+          #detailsBox {
+              color: $main-blue;
+              padding-top: 1em;
+              padding-bottom: 1em;
+              margin-top: 1em;
+              margin-bottom: 1em;
+              font-weight: 700;
+              font-size: 1.1em;
+              background-color: $grey-red;
+          }
+      }
+
+//Error
+  #errorConfirmation {
+    text-align: center;
+
+    h2 {
+      font-size: 2.5em;
+      color: $main-black;
+      font-weight: 600;
+      margin: 0.5em 0;
+    }
+
+    p {
+      font-size: 1.25em;
+      margin-bottom: 2em;
+      line-height: 1.75em;
+    }
+
+    .broken-computer {
+      width: 15em;
+    }
+
+    @media (max-width: 767px) {
+      margin: 10% 1em 40%;
+
+      h2 {
+        font-size: 2em;
+      }
+
+      .broken-computer {
+        width: 10em;
+      }
+    }
+}
+
+}

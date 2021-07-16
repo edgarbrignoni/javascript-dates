@@ -1,0 +1,36 @@
+/*** Time Out Page ***/
+#timeOutPage {
+  margin: 2.75em 0 5em;
+  @media (max-width: 767px) {
+    //margin-top: 6.8em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    color: $main-black;
+    font-weight: 600;
+    margin: 0.5em 0;
+  }
+
+  p {
+    font-size: 1.25em;
+    margin-bottom: 2em
+  }
+
+  .broken-computer {
+    width: 15em;
+  }
+
+  .error-timeout {
+    text-align: center;
+  }
+
+  .btn-resubmit {
+    background-color: #214290;
+    color: $font-white;
+    font-weight: 600;
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+  }
+
+}

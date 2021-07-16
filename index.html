@@ -7,30 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="eft-schedule" class='row'>
-        <div class="row">
-            <button class="col gray box" type="submit" name="reload" onclick="location.reload()">RELOAD</button>
-            <button class="col purple box" type="submit" name="loanDecision" onclick="loanDecision()">Go Lycos! Get it!</button>
+    <div id="loanSelection">
+        <div class="loan-selection-close close-item">
+            <img src="/assets/media/x_close.55c0868f882400e66512747da1612fc3.svg" alt="Close Button">
         </div>
-        <div class="row">
-            <div class="col blue box">
-                Payment Number
+        <h1>Set Your Preferred Schedule</h1>
+        <p>
+            Your EFT Dates have been selected to match the dates that you get paid, based on the information that you provided.  Please review and confirm that these dates work for you.
+        </p>
+        <div id="loanScheduleDisplay">
+            <div id="eft-schedule" class='row'>
+                <div class="row">
+                    <button class="col gray box" type="submit" name="reload" onclick="location.reload()">RELOAD</button>
+                    <button class="col purple box" type="submit" name="loanDecision" onclick="loanDecision()">Go Lycos! Get it!</button>
+                </div>
+                <div class="row">
+                    <div class="col blue box">
+                        Payment Number
+                    </div>
+                    <div class="col blue box">
+                        Payment Amount
+                    </div>
+                    <div class="col blue box">
+                        Contractual Due Dates
+                    </div>
+                    <div class="col blue box">
+                        EFT Dates
+                    </div>
+                    <button class="col green box" type="submit" name="columnInstallAdd" onclick="columnInstallment('add')">
+                        column+
+                    </button>
+                    <button class="col red box" type="submit" name="columnInstallSub" onclick="columnInstallment('sub')">
+                        column-
+                    </button>
+                </div>
             </div>
-            <div class="col blue box">
-                Payment Amount
-            </div>
-            <div class="col blue box">
-                Contractual Due Dates
-            </div>
-            <div class="col blue box">
-                EFT Dates
-            </div>
-            <button class="col green box" type="submit" name="columnInstallAdd" onclick="columnInstallment('add')">
-                column+
-            </button>
-            <button class="col red box" type="submit" name="columnInstallSub" onclick="columnInstallment('sub')">
-                column-
-            </button>
         </div>
     </div>
     <script src="global-functions.js"></script>

@@ -1,0 +1,592 @@
+#affiliateReferralPage {
+    margin-top: 1em;
+
+    h1 {
+        color: $main-black;
+        font-size: 2em;
+        font-weight: bolder;
+    }
+
+    .prominent {
+        font-size: 1.05em;
+        font-weight: 600;
+        // color: #625e5c;
+        color: $main-black;
+    }
+
+    .header {
+        background: $light-blue;
+        text-align: left;
+        padding: 5px 11px;
+        margin: 0px;
+        margin-bottom: 25px;
+        color: white;
+    }
+
+    a {
+        color: $main-green;
+    }
+
+    .cirle-check-style {
+
+    }
+
+    @media (max-width: 576px) {
+        padding: 0 15px;
+    }
+
+    @media (max-width: 992px) {
+        #affiliate-referral-img {
+            display: none;
+        }
+    }
+
+    h6 {
+        margin-top: 2rem;
+    }
+
+    #blackBookFields,
+    #spouseAdditionalInfo,
+    #spouseAddressInfo {
+        margin: auto;
+        width: 100%;
+    }
+
+    #spouseAddressInfo,
+    .disclosure-info {
+        padding: 0 15px;
+    }
+
+    .void-check {
+        margin: 0 0 45px;
+    }
+    #captchaRow.invalid {
+        background-image: none !important;
+        padding-left: 3px;
+        padding-top: 3px;
+        #captcha-message {
+            text-align: center;
+            padding: 10px;
+            color: red;
+        }
+    }
+}
+
+#returnApplyForm {
+    .checkbox-inline > label {
+        display: inline;
+    }
+
+    .checkbox-inline > .errorMessage {
+        text-align: left;
+    }
+
+    .form-check-input {
+        margin-top: 0.35rem;
+    }
+
+    #affiliate-app-message {
+        margin: 0 -15px;
+
+        h1 {
+            color: $main-blue;
+            font-size: 2em;
+            font-weight: bolder;
+        }
+
+        h2 {
+            // color: @gray1;
+            font-size: 1.5em;
+            margin-bottom: 2em;
+        }
+    }
+
+    .modal-headerForm {
+        position: relative;
+
+        @media (max-width: $screen-xs-max) {
+            p {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .appfrmCheckingOrSavings {
+        margin-top: 17px;
+    }
+
+    .appfrmnextPayDate,
+    .returnappfrmnextPayDate,
+    .returnappfrmdob {
+        position: relative;
+    }
+
+    #employmentFields,
+    .appfrmGrossPay,
+    .appfrmGovernmentIncomefrequency,
+    .appfrmOtherIncomefrequency,
+    .appfrmCheckingOrSavings {
+        display: none;
+    }
+
+    .ca-purpose-of-loan {
+        margin-top: 30px;
+    }
+
+    .prominent {
+        font-size: 1.05em;
+        font-weight: 600;
+        // color: #625e5c;
+        color: $main-black;
+    }
+
+    p {
+        color: black;
+        font-size: 0.875em;
+    }
+
+    .error {
+        color: $error-msg !important;
+    }
+
+    .header {
+        background: $light-blue;
+        text-align: left;
+        padding: 5px 11px;
+        margin: 0px;
+        margin-bottom: 25px;
+        color: white;
+    }
+
+    fieldset {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    fieldset:not(:first-of-type) {
+        display: none;
+    }
+
+    .submit {
+        padding-right: 0;
+        padding-left: 0;
+        outline: none;
+    }
+
+    .modal-bodyForm {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        top: 0;
+
+        @media (max-width: $screen-xs-max) {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+    }
+
+    .action-button {
+        width: 100px;
+        background: #696969;
+        font-weight: 700;
+        color: #fff;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 10px 5px;
+        float: right;
+        margin: 0 15px;
+    }
+
+    input[type='radio'] {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    #progressbar {
+        margin-bottom: 0;
+        overflow: hidden;
+        counter-reset: step;
+        padding-left: 0;
+        width: 50%;
+        margin-left: auto;
+
+        li {
+            list-style-type: none;
+            color: black;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 9px;
+            width: 25%;
+            float: left;
+            position: relative;
+            text-align: center;
+            padding: 0px;
+            border-right: 1px solid #67c8f3;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            &:before {
+                content: counter(step);
+                counter-increment: step;
+                width: 100%;
+                padding: 10px 0;
+                line-height: 20px;
+                display: block;
+                font-size: 18px;
+                color: white;
+                background: none;
+                border-radius: 3px;
+                margin: 0 auto;
+                text-align: center;
+                z-index: 1;
+                position: relative;
+            }
+
+            &.active {
+                background: $main-green;
+                color: white;
+            }
+        }
+    }
+
+    #idLeadFormConsentDivMain {
+        background-color: white;
+        color: black;
+        overflow: scroll;
+        resize: none;
+        height: 70px;
+        text-align: left;
+        width: auto;
+        font-size: 11px;
+        border: 1px solid grey;
+        border: 1px solid #d3d3d3;
+        padding: 10px 15px;
+        margin: 15px 0 10px;
+
+        a {
+            color: $error-msg;
+        }
+    }
+
+    #formappfarerror {
+        h2 {
+            color: white;
+        }
+    }
+
+    .g-recaptcha div {
+        margin: 0 auto;
+    }
+
+    .showHideSSN {
+        padding-top: 22px;
+        display: flex;
+
+        .showHideSSNbtn {
+            flex: 1;
+            margin-right: 5px;
+        }
+
+        .notification {
+            flex: 2;
+        }
+    }
+
+    label.notification {
+        font-size: 14px;
+        line-height: 16px;
+        color: $main-green;
+    }
+
+    .lockIcon {
+        .fa-lock {
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            color: $main-green;
+        }
+
+        .error {
+            .fa-lock {
+                color: $error-msg;
+            }
+        }
+
+        input {
+            padding-right: 25px;
+        }
+    }
+
+    #returncode-field {
+        #returncode-message-container {
+            position: absolute;
+            z-index: 10;
+            bottom: 55px;
+            text-align: right;
+            width: 100%;
+
+            #returncode-message {
+                text-align: left;
+            }
+
+            button.alert-close {
+                border: none !important;
+                background: none !important;
+                top: -15px !important;
+                font-size: 2em;
+                line-height: 0;
+            }
+        }
+
+        #returncode-message-container.alert-danger {
+            color: $font-white;
+            background-color: #b81118;
+            border-radius: 10px;
+        }
+
+        #returncode-message-container.alert-success {
+            background-color: $main-green;
+            color: $font-white;
+            border-radius: 10px;
+        }
+    }
+}
+
+#something-wrong h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: $main-green;
+    text-align: center;
+}
+
+#app-id-error {
+    color: $main-blue;
+    word-wrap: break-word;
+    font-size: 1.5em;
+}
+
+#returnApplyForm {
+    .azRadioContainer {
+        margin: 1rem 0;
+    }
+
+    #submitBtn {
+        margin-right: 15px;
+        margin-bottom: 2em;
+    }
+
+    #app-id-error {
+        color: $main-green;
+        word-wrap: break-word;
+        font-size: 1.5em;
+    }
+
+    .TXConsumerPamphlet,
+    .DEItemization {
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
+            margin: 1rem 0;
+        }
+    }
+
+    .rounded-check_wrapper {
+        margin-left: 1em;
+        margin-right: 0.25em;
+
+        .rounded-check {
+            width: 2.25em;
+            height: 2.25em;
+            position: relative;
+            margin-top: 0.25em;
+            background: #f3f3f3;
+            border: 1px solid #cccccc;
+            border-radius: 4em;
+            //float: right;
+            // margin-right: 1em;
+            &:hover {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem #007bff40;
+            }
+            &:focus-within {
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 1.5px 1px #80bdff;
+            }
+            label {
+                width: 2em;
+                height: 2em;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                cursor: default;
+                border-radius: 50px;
+                &:after {
+                    content: '';
+                    width: 1.5em;
+                    height: 0.75em;
+                    position: absolute;
+                    bottom: 5px;
+                    left: 5px;
+                    border: 0.25em solid $main-green;
+                    border-top: none;
+                    border-right: none;
+                    background: transparent;
+                    opacity: 0;
+                    transform: rotate(-45deg);
+                    @media (max-width: 767px) {
+                        // width: 1em;
+                        // height: 0.55em;
+                        // bottom: 1px;
+                        // left: 4px;
+                    }
+                }
+            }
+            input[type='checkbox'] {
+                // visibility: hidden;
+                //opacity: 0; //Fix for screen reader
+                width: 2.1em;
+                height: 2.1em;
+                border-radius: 50%;
+                vertical-align: middle;
+                -webkit-appearance: none;
+                outline: none;
+                cursor: pointer;
+                &:checked + label:after {
+                    opacity: 1;
+                }
+            }
+            @media (max-width: 767px) {
+                // width: 1.5em;
+                // height: 1.5em;
+            }
+        }
+    }
+    /* end .rounded-check */
+
+    .modal-window {
+        width: auto !important;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.75);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+
+        &:target {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        & > div {
+            // width: 50%;
+            max-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 1em;
+            background: #fff;
+            overflow: visible;
+        }
+
+        .modal-content {
+            max-width: 1000px;
+            height: auto;
+            padding: 50px;
+            width: 95%;
+
+            header {
+                font-weight: bold;
+            }
+
+            .slider-btn {
+                display: flex;
+                align-self: center;
+
+                .slider-next,
+                .slider-previous {
+                    background: none;
+                    border: none;
+                    color: #333;
+                    font-size: 3em;
+                    font-weight: 700;
+                }
+            }
+
+            .modal-img {
+                max-height: 100%;
+                max-width: 100%;
+                box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+                margin: auto;
+                width: auto;
+            }
+        }
+    }
+
+    .modal-close {
+        color: #333;
+        font-size: 200%;
+        line-height: 50px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 70px;
+        text-decoration: none;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+#returnApplyFormSubmit {
+    color: white;
+}
+
+#errorConfirmation {
+    margin: 1% 1em 4%;
+    text-align: center;
+
+    h2 {
+      font-size: 2.5em;
+      color: $main-black;
+      font-weight: 600;
+      margin: 0.5em 0;
+    }
+
+    p {
+      font-size: 1.25em;
+      margin-bottom: 2em;
+      line-height: 1.75em;
+    }
+
+    .broken-computer {
+      width: 15em;
+    }
+
+    @media (max-width: 767px) {
+      margin: 10% 1em 40%;
+
+      h2 {
+        font-size: 2em;
+      }
+
+      .broken-computer {
+        width: 10em;
+      }
+    }
+}

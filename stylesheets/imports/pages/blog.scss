@@ -1,0 +1,30 @@
+/*** Blog Page ***/
+#blogPage {
+  margin: 5em 0;
+  color: $main-green;
+  @media (max-width: 767px) {
+    //margin-top: 6.8em;
+  }
+  a {
+    color: $main-green;
+  }
+  li {
+    list-style: none;
+    font-size: 1.25em;
+  }
+}
+
+/*** Blog Posts***/
+#blogPost {
+  margin: 5em 0;
+  color: $main-blue;
+  @media (max-width: 767px) {
+    //margin-top: 6.8em;
+  }
+
+  h1,h2,h3,a {color: $main-green;}
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,13 @@
+/*** Website Accessibility ***/
+#websiteAccessibility {
+  margin: 5em 0;
+  @media (max-width: 767px) {
+    //margin-top: 6.8em;
+  }
+
+  a {
+    color: $main-green;
+    text-decoration: underline;
+  }
+
+}

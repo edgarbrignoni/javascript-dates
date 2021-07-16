@@ -1,0 +1,68 @@
+
+// Adds margin to footer when cookie shows
+.footer-cookie-bar-on {
+    margin-bottom: $height-cookies-bar;
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: $height-cookies-bar-xs;
+    }
+  }
+
+.squish {
+  height: 0 !important ;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: 0 !important ;
+}
+
+  // Needs responsive work
+  .cookie-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $main-blue;
+    color: white;
+    height: $height-cookies-bar;
+    border-top: 2px solid #ffffff;
+    box-shadow: 0 1px 9px 0 rgba(0, 0, 0, .22) !important;
+    padding: 1em 3em;
+    z-index: 10000;
+    transition: all 0.4s ease-in-out;
+    @media (max-width: 992px) {
+      height: 20vh;
+      padding: 0.25em;
+      text-align: center;
+    }
+
+    p {
+      color: white;
+      line-height: 3em;
+      float: left;
+      margin-right: 5em;
+      @media (max-width: 992px) {
+        line-height: 1.5em;
+        margin: 0;
+        padding: 0.5em;
+      }
+    }
+
+    button {
+      border: 1px solid white;
+      color: white;
+      text-align: center;
+      background-color: transparent;
+      padding: 0.5em 2.6em;
+      margin-left: 1em;
+      border-radius: .6em;
+      font-weight: 600;
+      font-size: 18px;
+      @media (max-width: 992px) {
+        border-radius: .2em;
+        padding: 0 1.5em;
+        margin-top: 0.75em;
+        margin-left: 0;
+        margin-right: .5em;
+      }
+    }
+
+  }

@@ -1,0 +1,20 @@
+// CHAT BOX STYLING
+.five9-frame {
+  right: 3vw !important;
+  width: auto !important;
+  .five9-frame-full {
+    right: 1vw !important;
+  }
+  @media (max-width: 767px) {
+    height: auto !important;
+    right: 0.25em !important;
+    bottom: 7vh !important;
+    z-index: 1 !important;
+  }
+}
+
+#topChat {
+  display: block;
+  z-index: 9999;
+  position: inherit;
+}
