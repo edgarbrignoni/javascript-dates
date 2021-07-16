@@ -1,6 +1,6 @@
 const eftSchedule = (loanDecision) => {
     let randomNumber = Math.floor(Math.random() * (27));
-    contractDates = loanDecision.decisionResponse.ONLINE_OFFERS[randomNumber].payment_schedule.payment.map((contractDate, index) => {
+    contractDates = loanDecision.ONLINE_OFFERS[randomNumber].payment_schedule.payment.map((contractDate, index) => {
         let element = document.querySelector('#eft-schedule');
         let installmentRow = document.createElement('div');
         let paymentsNumber = document.createElement('div');
