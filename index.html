@@ -9,6 +9,10 @@
 <body>
     <div id="eft-schedule" class='row'>
         <div class="row">
+            <button class="col gray box" type="submit" name="reload" onclick="location.reload()">RELOAD</button>
+            <button class="col purple box" type="submit" name="loanDecision" onclick="loanDecision()">Go Lycos! Get it!</button>
+        </div>
+        <div class="row">
             <div class="col blue box">
                 Payment Number
             </div>
@@ -21,12 +25,17 @@
             <div class="col blue box">
                 EFT Dates
             </div>
-            <button class="col gray box" type="submit" name="loanDecision" onclick="location.reload()">RELOAD</button>
-            <button class="col purple box" type="submit" name="loanDecision" onclick="loanDecision()">Go Lycos! Get it!</button>
+            <button class="col green box" type="submit" name="columnInstallAdd" onclick="columnInstallment('add')">
+                column+
+            </button>
+            <button class="col red box" type="submit" name="columnInstallSub" onclick="columnInstallment('sub')">
+                column-
+            </button>
         </div>
     </div>
     <script src="global-functions.js"></script>
     <script src="row-installment.js"></script>
+    <script src="column-installment.js"></script>
     <script src="eft-schedule.js"></script>
     <script src="loan-decision.js"></script>
 </body>
