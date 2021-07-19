@@ -1,4 +1,4 @@
-loanDecision = () => {
+const loanDecision = () => {
     let response = {
         "success": 1,
         "error-messages": null,
